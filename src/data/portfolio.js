@@ -352,34 +352,122 @@ export const caseStudies = [
 
 // ─── OPEN SOURCE ──────────────────────────────────────────────────
 export const openSource = {
-  maintainers: [
+  tagline:
+    "Open source is where I sharpen my craft — real code, real feedback, real stakes. I contribute to established ecosystems and actively maintain projects I've built.",
+
+  // ── Organisations I contribute to ────────────────────────────
+  organizations: [
     {
-      name: "GrantFox",
-      roles: ["Open Source Maintainer", "Open Source Contributor"],
+      name: "Drips",
+      context: "Decentralised streaming payments protocol",
       description:
-        "Leading frontend development and design systems for a grant discovery platform empowering African developers with funding opportunities.",
-      contributions: "50+ PRs reviewed, 15+ features shipped",
-      stars: "120+",
-      language: "TypeScript",
-      period: "July 2026 – Present",
-      profileUrl: "https://maintainer.grantfox.xyz/profile/k-deejah",
-      profileLabel: "View Profile",
-      color: "amber",
-    },
-    {
-      name: "Drips Wave (Stellar)",
-      roles: ["Open Source Maintainer", "Open Source Contributor"],
-      description:
-        "Contributing to the Stellar wave of Drips — a decentralized streaming payments protocol enabling real-time, continuous funding for open-source projects.",
-      contributions: "30+ PRs merged, redesigned core flows",
-      stars: "800+",
-      language: "TypeScript",
+        "Drips is an open-source protocol and ecosystem that enables continuous, real-time funding streams for developers and open-source projects. I contribute to the Drips Wave (Stellar) initiative — collaborating with other contributors on frontend improvements, UX redesigns, and accessibility work within this decentralised ecosystem.",
+      myRole: "Open Source Contributor & Maintainer",
       period: "May 2026 – Present",
+      contributions: [
+        "Contributed to the Stellar wave frontend interface",
+        "Redesigned core streaming payment flow",
+        "Reviewed pull requests and provided code feedback",
+        "Improved onboarding and accessibility",
+      ],
+      tech: ["TypeScript", "React", "Ethers.js", "Stellar"],
       profileUrl: "https://www.drips.network/wave/stellar",
       profileLabel: "View Project",
       color: "purple",
     },
+    {
+      name: "GrantFox",
+      context: "Open-source grant discovery platform",
+      description:
+        "GrantFox is an open-source platform that helps African developers discover and apply for grants. I contribute as a maintainer and frontend engineer — reviewing PRs, shipping features, and helping grow the contributor community within this collaborative open-source project.",
+      myRole: "Open Source Contributor & Maintainer",
+      period: "July 2026 – Present",
+      contributions: [
+        "Contributed to frontend development and design systems",
+        "Built the grant application tracker feature",
+        "Reviewed 50+ pull requests",
+        "Helped onboard new contributors",
+      ],
+      tech: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
+      profileUrl: "https://maintainer.grantfox.xyz/profile/k-deejah",
+      profileLabel: "View Profile",
+      color: "amber",
+    },
   ],
+
+  // ── Projects I actively maintain ─────────────────────────────
+  maintainedProjects: [
+    {
+      name: "LineProof",
+      tagline: "AI-powered document authenticity verification",
+      description:
+        "An open-source tool that uses AI to detect document tampering, forgery, and AI-generated content. I maintain the codebase, review contributions, manage issues, and guide the project roadmap.",
+      myRole: "Maintainer",
+      tech: ["React", "TypeScript", "OpenAI API", "Tailwind CSS", "Vercel"],
+      responsibilities: [
+        "Codebase maintenance and code review",
+        "Issue triage and contributor guidance",
+        "Feature roadmap and prioritisation",
+        "Documentation and contribution guidelines",
+      ],
+      status: "active",
+      github: "https://github.com/K-deejah/lineproof",
+      color: "amber",
+    },
+    {
+      name: "SoroKit",
+      tagline: "Developer toolkit for Soroban smart contracts on Stellar",
+      description:
+        "An open-source toolkit that simplifies building and deploying Soroban smart contracts. I maintain the contract templates, CLI tooling, and documentation to keep the developer experience smooth.",
+      myRole: "Maintainer",
+      tech: ["Rust", "Soroban SDK", "Stellar", "TypeScript", "Node.js"],
+      responsibilities: [
+        "Rust contract template maintenance",
+        "CLI tooling development and updates",
+        "Developer documentation authorship",
+        "Issue triage and community support",
+      ],
+      status: "active",
+      github: "https://github.com/K-deejah/sorokit",
+      color: "purple",
+    },
+    {
+      name: "Velo System",
+      tagline: "Design system and React component library",
+      description:
+        "An open-source design system with a React and TypeScript component library, Figma component library, and Storybook documentation. I maintain component quality, accessibility standards, and keep design and engineering aligned.",
+      myRole: "Maintainer",
+      tech: ["React", "TypeScript", "Tailwind CSS", "Storybook", "Figma"],
+      responsibilities: [
+        "Component library maintenance and versioning",
+        "Accessibility compliance (WCAG 2.1 AA)",
+        "Storybook documentation updates",
+        "Design token and Figma sync",
+      ],
+      status: "active",
+      github: "https://github.com/K-deejah/velo-system",
+      color: "blue",
+    },
+    {
+      name: "Nullifier System",
+      tagline: "Privacy-preserving nullifier pattern for Web3 applications",
+      description:
+        "An open-source implementation of the nullifier pattern for Web3 applications — enabling privacy-preserving proofs that prevent double-spending without revealing user identity. I maintain the contract implementations and developer documentation.",
+      myRole: "Maintainer",
+      tech: ["Rust", "Soroban SDK", "Stellar", "TypeScript"],
+      responsibilities: [
+        "Smart contract implementation and maintenance",
+        "Security review and testing",
+        "Developer documentation",
+        "Issue triage and roadmap",
+      ],
+      status: "active",
+      github: "https://github.com/K-deejah/nullifier-system",
+      color: "green",
+    },
+  ],
+
+  // ── Technologies ─────────────────────────────────────────────
   techFocus: [
     { name: "React", desc: "Component architecture, hooks, performance optimisation" },
     { name: "TypeScript", desc: "Type-safe code, interfaces, generics, strict mode" },
@@ -390,26 +478,13 @@ export const openSource = {
     { name: "Git", desc: "Branch strategy, rebasing, code review workflows" },
     { name: "GitHub", desc: "PR reviews, issue triage, CI/CD configuration" },
   ],
-  contributions: [
-    { repo: "GrantFox/frontend", type: "Feature", desc: "Built grant application tracker UI" },
-    { repo: "Drips/interface", type: "Feature", desc: "Redesigned core streaming payment flow" },
-    { repo: "vercel/next.js", type: "Bug Fix", desc: "Fixed hydration mismatch in dynamic routes" },
-    { repo: "shadcn/ui", type: "Feature", desc: "Added new accessible component variant" },
-    { repo: "tailwindlabs/tailwindcss", type: "Docs", desc: "Improved dark mode documentation" },
-  ],
-  stats: [
-    { label: "Total Commits", value: "500+" },
-    { label: "PRs Merged", value: "80+" },
-    { label: "Issues Closed", value: "60+" },
-    { label: "Repositories", value: "25+" },
-  ],
-  tagline:
-    "Open source has sharpened my craft more than anything else — real code, real feedback, real stakes. I maintain projects and contribute to the tools I use daily.",
+
+  // ── Contribution approach ─────────────────────────────────────
   values: [
     { title: "Code Quality", desc: "Readable, well-documented, maintainable code over clever shortcuts." },
     { title: "Collaboration", desc: "Constructive PR reviews, clear commit messages, async-friendly communication." },
     { title: "Documentation", desc: "I write the docs others wish existed — READMEs, inline comments, ADRs." },
-    { title: "Maintainership", desc: "Triaging issues, onboarding contributors, keeping the project healthy long-term." },
+    { title: "Maintainership", desc: "Triaging issues, onboarding contributors, keeping projects healthy long-term." },
   ],
 };
 
