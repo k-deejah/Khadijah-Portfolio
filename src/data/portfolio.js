@@ -187,21 +187,29 @@ export const openSource = {
   maintainers: [
     {
       name: "GrantFox",
-      role: "Open Source Maintainer",
+      roles: ["Open Source Maintainer", "Open Source Contributor"],
       description:
-        "Leading frontend development and design systems for a grant discovery platform empowering African developers.",
+        "Leading frontend development and design systems for a grant discovery platform empowering African developers with funding opportunities.",
       contributions: "50+ PRs reviewed, 15+ features shipped",
       stars: "120+",
       language: "TypeScript",
+      period: "July 2026 – Present",
+      profileUrl: "https://maintainer.grantfox.xyz/profile/k-deejah",
+      profileLabel: "View Profile",
+      color: "amber",
     },
     {
-      name: "Drips",
-      role: "Open Source Maintainer",
+      name: "Drips Wave (Stellar)",
+      roles: ["Open Source Maintainer", "Open Source Contributor"],
       description:
-        "Contributing to the decentralized streaming payments protocol interface, focused on UX improvements and accessibility.",
+        "Contributing to the Stellar wave of Drips — a decentralized streaming payments protocol enabling real-time, continuous funding for open-source projects.",
       contributions: "30+ PRs merged, redesigned core flows",
       stars: "800+",
       language: "TypeScript",
+      period: "May 2026 – Present",
+      profileUrl: "https://www.drips.network/wave/stellar",
+      profileLabel: "View Project",
+      color: "purple",
     },
   ],
   contributions: [
@@ -310,9 +318,9 @@ export const writing = [
 
 export const experience = [
   {
-    role: "Open Source Maintainer",
+    role: "Open Source Maintainer & Contributor",
     company: "GrantFox",
-    period: "2024 — Present",
+    period: "July 2026 — Present",
     description:
       "Leading frontend development and design systems. Reviewing PRs, shipping features, and growing the contributor community.",
     highlights: [
@@ -320,18 +328,22 @@ export const experience = [
       "Established design system",
       "Onboarded 10+ contributors",
     ],
+    link: "https://maintainer.grantfox.xyz/profile/k-deejah",
+    linkLabel: "View Profile",
   },
   {
-    role: "Open Source Maintainer",
-    company: "Drips",
-    period: "2023 — Present",
+    role: "Open Source Maintainer & Contributor",
+    company: "Drips Wave (Stellar)",
+    period: "May 2026 — Present",
     description:
-      "Contributing to the decentralized streaming payments interface. Focused on UX improvements and accessibility.",
+      "Contributing to the Stellar wave of Drips — a decentralized streaming payments protocol. Focused on UX improvements, accessibility, and onboarding.",
     highlights: [
       "Redesigned core streaming flow",
       "Improved onboarding by 40%",
       "30+ PRs merged",
     ],
+    link: "https://www.drips.network/wave/stellar",
+    linkLabel: "View Project",
   },
   {
     role: "AI Design Engineer",
@@ -344,6 +356,8 @@ export const experience = [
       "Combined AI + Design + Engineering",
       "Remote collaboration globally",
     ],
+    link: null,
+    linkLabel: null,
   },
 ];
 
