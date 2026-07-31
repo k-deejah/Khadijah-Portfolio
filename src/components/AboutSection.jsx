@@ -34,12 +34,11 @@ export default function AboutSection() {
                 id="about-heading"
                 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.02em] text-textPrimary mb-8"
               >
-                The intersection of{" "}
-                <span className="text-gradient">design, AI,</span> and
-                engineering
+                Design, <span className="text-gradient">AI,</span> and
+                engineering — end to end
               </h2>
 
-              <div className="space-y-5 text-textMuted text-lg leading-relaxed">
+              <div className="space-y-4 text-textMuted text-lg leading-relaxed">
                 {about.narrative.map((para, i) => (
                   <p key={i}>{para}</p>
                 ))}

@@ -34,7 +34,7 @@ export default function SkillsSection() {
             variants={fadeInUp}
             className="section-label mb-4 block"
           >
-            SKILLS
+            TECH STACK
           </motion.span>
           <motion.h2
             variants={fadeInUp}
@@ -46,8 +46,7 @@ export default function SkillsSection() {
             variants={fadeInUp}
             className="text-lg text-textMuted max-w-2xl mb-16"
           >
-            I don't just list technologies — I understand when and why to use
-            them. My skills span the full product development lifecycle.
+            The stack I use across design, frontend engineering, AI integration, and Web3.
           </motion.p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

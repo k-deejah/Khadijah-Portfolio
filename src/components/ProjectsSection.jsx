@@ -313,7 +313,6 @@ export default function ProjectsSection() {
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
         >
-          {/* Header */}
           <motion.span variants={fadeInUp} className="section-label mb-4 block">
             FEATURED PROJECTS
           </motion.span>
@@ -322,15 +321,13 @@ export default function ProjectsSection() {
             variants={fadeInUp}
             className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.02em] text-textPrimary mb-4"
           >
-            Products that solve{" "}
-            <span className="text-gradient">real</span> problems.
+            Selected <span className="text-gradient">work</span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-lg text-textMuted max-w-2xl mb-4"
           >
-            A selection of products I've designed and built — from AI tools and
-            developer tooling to marketplaces and design systems.
+            AI tools, developer tooling, marketplaces, and design systems — each starting with a user problem.
           </motion.p>
 
           {/* Status legend */}
@@ -340,15 +337,15 @@ export default function ProjectsSection() {
           >
             <span className="flex items-center gap-2">
               <ExternalLink size={12} className="text-accent" aria-hidden="true" />
-              Live Demo available
+              Live
             </span>
             <span className="flex items-center gap-2">
               <Clock size={12} aria-hidden="true" />
-              Coming Soon — deployment in progress
+              Deployment in progress
             </span>
             <span className="flex items-center gap-2">
               <Github size={12} aria-hidden="true" />
-              GitHub — open source repository
+              Open source
             </span>
           </motion.div>
 

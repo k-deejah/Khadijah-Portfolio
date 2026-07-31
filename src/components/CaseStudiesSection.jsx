@@ -153,18 +153,10 @@ export default function CaseStudiesSection() {
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-lg text-textMuted max-w-2xl mb-4"
+            className="text-lg text-textMuted max-w-2xl mb-16"
           >
-            Deep dives into the research, decisions, and iterations that shaped
-            each product. Not just what was built — but why.
-          </motion.p>
-          <motion.p
-            variants={fadeInUp}
-            className="text-sm text-textMuted font-mono mb-16"
-          >
-            Click any case study to expand the full write-up.
-            Sections marked <span className="italic">[Placeholder]</span> will
-            be filled in as content is finalised.
+            Process deep-dives — research, decisions, and iterations.
+            Expand any study to read the full write-up.
           </motion.p>
 
           {/* Cards grid — one card per row so the expanded panel sits directly below its card */}

@@ -359,10 +359,6 @@ export default function OpenSourceSection() {
           {/* ── 1. Organisations I Contribute To ── */}
           <motion.div variants={fadeInUp} className="mb-16">
             <SectionDivider label="Organizations I Contribute To" />
-            <p className="text-sm text-textMuted max-w-2xl mb-8">
-              These are open-source organisations and ecosystems where I collaborate with
-              other contributors on real-world software projects.
-            </p>
             <div className="grid md:grid-cols-2 gap-6">
               {openSource.organizations.map((org, i) => (
                 <OrgCard key={org.name} org={org} index={i} />
@@ -373,10 +369,6 @@ export default function OpenSourceSection() {
           {/* ── 2. Projects I Maintain ── */}
           <motion.div variants={fadeInUp} className="mb-16">
             <SectionDivider label="Projects I Maintain" />
-            <p className="text-sm text-textMuted max-w-2xl mb-8">
-              These are open-source projects I actively maintain — managing the codebase,
-              reviewing contributions, triaging issues, and guiding the roadmap.
-            </p>
             <div className="grid md:grid-cols-2 gap-6">
               {openSource.maintainedProjects.map((project, i) => (
                 <MaintainedProjectCard key={project.name} project={project} index={i} />

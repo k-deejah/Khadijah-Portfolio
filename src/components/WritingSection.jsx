@@ -25,20 +25,17 @@ export default function WritingSection() {
           variants={staggerContainer}
         >
           <motion.span variants={fadeInUp} className="section-label mb-4 block">
-            WRITING
+            BUILDING IN PUBLIC
           </motion.span>
           <motion.h2
             id="writing-heading"
             variants={fadeInUp}
             className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.02em] text-textPrimary mb-4"
           >
-            Thinking out loud
-            <br />
-            on <span className="text-gradient">AI & design.</span>
+            Writing on <span className="text-gradient">AI & craft.</span>
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-lg text-textMuted max-w-xl mb-16">
-            Essays on the craft of building AI products, open-source engineering,
-            and designing for the real world.
+            Short essays on building AI products, open-source engineering, and design.
           </motion.p>
 
           <div className="space-y-px">

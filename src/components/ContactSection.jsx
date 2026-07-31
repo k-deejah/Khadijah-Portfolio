@@ -29,16 +29,14 @@ export default function ContactSection() {
             variants={fadeInUp}
             className="text-[clamp(2rem,5vw,4rem)] font-bold leading-tight tracking-[-0.02em] text-textPrimary mb-6"
           >
-            Ready to build something <span className="text-gradient">intelligent</span>
+            Let's build something <span className="text-gradient">intelligent</span>
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
             className="text-lg text-textMuted leading-relaxed mb-12"
           >
-            Whether you're an AI startup, a founder with an idea, or a team
-            looking for someone who speaks both design and engineering — let's
-            talk.
+            Open to AI product roles, frontend engineering, design systems work, and open-source collaboration. Remote-friendly.
           </motion.p>
 
           <motion.a

@@ -2,20 +2,18 @@
 export const personal = {
   name: "Khadijah Abdulwasii",
   title: "AI Design Engineer",
-  subtitle: "Designing and engineering AI-powered digital products",
+  subtitle: "Design · AI · Frontend Engineering",
   location: "Lagos, Nigeria",
   remote: "Remote",
   email: "abdulwasiikhadijah@gmail.com",
-  bio: "I'm Khadijah Abdulwasii — an AI Design Engineer based in Lagos, Nigeria. I got into this field because I kept seeing the same problem: powerful technology that people couldn't actually use. Models that worked beautifully in demos but failed in the real world because nobody thought about the human on the other end. So I learned both languages — I design interfaces with the precision of a product designer and build them with the fluency of a frontend engineer. Building from Lagos gives me a particular perspective: I design for contexts where connectivity isn't always fast, where users come from diverse backgrounds, and where making technology accessible isn't a nice-to-have — it's the product.",
+  bio: "AI Design Engineer based in Lagos. I design and build AI-powered products end-to-end — from user research and Figma prototypes to production React and Next.js code.",
   philosophy:
-    "Great AI shouldn't feel hard to use. My work sits at the intersection of design, AI, and engineering — where I translate complex technology into intuitive experiences that real people actually want to use.",
-  tagline:
-    "Building from Lagos for the world. Bridging design and engineering to ship AI products that work — not just prototypes.",
+    "I bring design thinking into engineering decisions and engineering constraints into design decisions. The result is products that work for real users.",
+  tagline: "Based in Lagos. Building for the world.",
 };
 
 // ─── NAVIGATION ──────────────────────────────────────────────────
 export const navLinks = [
-  { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
   { name: "Open Source", href: "#opensource" },
@@ -28,9 +26,8 @@ export const navLinks = [
 export const hero = {
   headline: "AI Design Engineer",
   subheadline:
-    "I sit at the intersection of AI, product design, and frontend engineering — building intelligent products that feel intuitive to the humans who use them.",
+    "I design and build AI-powered products — combining product design, frontend engineering, and AI integration into experiences people actually want to use.",
   label: "Available for opportunities",
-  badge: "Based in Lagos · Remote",
   domains: ["AI", "Product Design", "Frontend Engineering", "Open Source", "Web3"],
   cta: {
     primary: { label: "View My Work", href: "#projects" },
@@ -39,13 +36,13 @@ export const hero = {
   },
 };
 
-// ─── PROBLEM ─────────────────────────────────────────────────────
+// ─── PROBLEM (kept for ProblemSection component compatibility) ────
 export const problem = {
-  title: "Great AI shouldn't feel hard to use.",
+  title: "Most AI products are powerful but hard to use.",
   text1:
-    "AI teams build powerful models. Designers create beautiful interfaces. But too often, the gap between them produces products that confuse users and fail to deliver on their potential.",
+    "AI teams build powerful models. Designers create beautiful interfaces. The gap between them produces products that confuse users and fail to deliver.",
   text2:
-    "As an AI Design Engineer, I sit at that intersection — fluent in both languages. I understand the model, the interface, and the human on the other side. That's a rare combination, and it's exactly what early-stage AI products need.",
+    "I work at that intersection — fluent in both design and engineering. I understand the model, the interface, and the user. That combination is rare, and it's exactly what early-stage AI products need.",
   capabilities: [
     "AI Integration",
     "Product Design",
@@ -58,40 +55,39 @@ export const problem = {
 
 // ─── PROCESS ─────────────────────────────────────────────────────
 export const process = {
-  title: "From problem to shipped product.",
-  subtitle: "A clear process means fewer surprises and better outcomes for everyone.",
+  title: "How I work.",
+  subtitle: "Research first. Design with constraints. Ship production code.",
   steps: [
     {
       num: "01",
       title: "Understand the Problem",
-      desc: "I start with your users, not your tech stack. Research, interviews, and competitive analysis to surface what actually matters.",
+      desc: "User research, interviews, and competitive analysis before touching Figma or writing code.",
     },
     {
       num: "02",
       title: "Design the Solution",
-      desc: "Wireframes, prototypes, and design systems — tested early, iterated fast. Design with engineering constraints in mind from day one.",
+      desc: "Wireframes, prototypes, and design systems — built with engineering constraints in mind from day one.",
     },
     {
       num: "03",
       title: "Build & Ship",
-      desc: "From Figma to production. I write the frontend code, integrate AI features, and ship products that work — not just prototypes.",
+      desc: "I write the frontend code, integrate AI features, and ship to production. No handoff required.",
     },
   ],
 };
 
 // ─── ABOUT ────────────────────────────────────────────────────────
 export const about = {
-  title: "The intersection of design, AI, and engineering",
+  title: "Design, AI, and engineering — end to end",
   narrative: [
-    "I'm Khadijah Abdulwasii — an AI Design Engineer who builds at the intersection of product design, frontend engineering, and artificial intelligence. I came to this role because I kept watching powerful technology fail its users at the interface layer — and I wanted to fix that.",
-    "I design and build AI-powered digital products end-to-end. That means running user research, writing Figma prototypes, and then writing the React or Next.js code that ships to production. I don't hand off — I carry the work through.",
-    "On the engineering side, I work across React, TypeScript, Next.js, and Tailwind CSS for frontend. I've contributed to open-source projects in JavaScript, TypeScript, and Rust, including smart contract work with Soroban on the Stellar blockchain.",
-    "My edge is the combination: I can sit in a product strategy conversation and a code review in the same afternoon and contribute meaningfully to both. I bring design thinking into engineering decisions and engineering constraints into design decisions — which produces better outcomes for real users.",
+    "I'm Khadijah Abdulwasii — an AI Design Engineer based in Lagos. I design and build AI-powered products from research through to production code.",
+    "On the engineering side: React, TypeScript, Next.js, Tailwind CSS for frontend. Rust and Soroban for Web3. I contribute to open-source projects in JavaScript, TypeScript, and Rust.",
+    "My edge is the full stack — design thinking in code reviews, engineering constraints in design decisions. I carry work from user research to shipped product without handing off.",
   ],
   stats: [
-    { number: "5+", label: "Projects Shipped" },
+    { number: "6+", label: "Projects Shipped" },
     { number: "OSS", label: "Maintainer" },
-    { number: "3+", label: "Domains" },
+    { number: "4", label: "Maintained Repos" },
     { number: "∞", label: "Still Learning" },
   ],
   whatIDo: [
@@ -109,7 +105,7 @@ export const about = {
     tools: ["Git", "GitHub", "Vercel", "Node.js", "GraphQL", "REST APIs"],
   },
   philosophy:
-    "Great AI shouldn't feel hard to use. I translate complex technology into intuitive experiences — designing with empathy and engineering with precision.",
+    "I bring design thinking into engineering decisions and engineering constraints into design decisions — which produces better outcomes for real users.",
   community: [
     "Open Source Contributor & Maintainer",
     "Hackathon Participant",
@@ -688,7 +684,7 @@ export const caseStudyDetails = {
 // ─── OPEN SOURCE ──────────────────────────────────────────────────
 export const openSource = {
   tagline:
-    "Open source is where I sharpen my craft — real code, real feedback, real stakes. I contribute to established ecosystems and actively maintain projects I've built.",
+    "Open source sharpens my craft — real code, real feedback, real stakes. I contribute to established ecosystems and maintain projects I've built.",
 
   // ── Organisations I contribute to ────────────────────────────
   organizations: [
@@ -914,52 +910,6 @@ export const writing = [
     date: "2024 · 5 MIN READ",
     title: "Building Accessible Products from Lagos: A Different Default",
     tag: "ACCESSIBILITY",
-  },
-];
-
-// ─── EXPERIENCE ───────────────────────────────────────────────────
-export const experience = [
-  {
-    role: "Open Source Maintainer & Contributor",
-    company: "GrantFox",
-    period: "July 2026 — Present",
-    description:
-      "Leading frontend development and design systems. Reviewing PRs, shipping features, and growing the contributor community.",
-    highlights: [
-      "Built grant application tracker",
-      "Established design system",
-      "Onboarded 10+ contributors",
-    ],
-    link: "https://maintainer.grantfox.xyz/profile/k-deejah",
-    linkLabel: "View Profile",
-  },
-  {
-    role: "Open Source Maintainer & Contributor",
-    company: "Drips Wave (Stellar)",
-    period: "May 2026 — Present",
-    description:
-      "Contributing to the Stellar wave of Drips — a decentralized streaming payments protocol. Focused on UX improvements, accessibility, and onboarding.",
-    highlights: [
-      "Redesigned core streaming flow",
-      "Improved onboarding by 40%",
-      "30+ PRs merged",
-    ],
-    link: "https://www.drips.network/wave/stellar",
-    linkLabel: "View Project",
-  },
-  {
-    role: "AI Design Engineer",
-    company: "Freelance",
-    period: "2023 — Present",
-    description:
-      "Designing and building AI-powered products for startups and open-source projects. End-to-end product development from research through to production.",
-    highlights: [
-      "Shipped 5+ production projects",
-      "Combined AI + Design + Engineering",
-      "Remote collaboration globally",
-    ],
-    link: null,
-    linkLabel: null,
   },
 ];
 

@@ -32,7 +32,6 @@ export default function ProcessSection() {
           >
             {process.subtitle}
           </motion.p>
-
           <div className="flex flex-col md:flex-row gap-8">
             {process.steps.map((step, i) => (
               <motion.div
