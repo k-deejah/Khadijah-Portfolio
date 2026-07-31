@@ -1,20 +1,21 @@
 import { motion } from "framer-motion";
 import { about } from "../data/portfolio.js";
 import { fadeInUp, staggerContainer } from "../lib/animations.js";
-import {
-  Brain,
-  Palette,
-  Code2,
-  Hexagon,
-  Terminal,
-} from "lucide-react";
+import { Brain, Palette, Code2, Hexagon, Terminal } from "lucide-react";
 
 const whatIDoIcons = [Brain, Palette, Code2, Hexagon, Terminal];
 
-export default function AboutSection() {
+const techCategories = [
+  { label: "Design", key: "design", color: "text-accent" },
+  { label: "Frontend", key: "frontend", color: "text-accentSecondary" },
+  { label: "AI", key: "ai", color: "text-accent" },
+  { label: "Web3", key: "web3", color: "text-accentSecondary" },
+  { label: "Tools", key: "tools", color: "text-accent" },
+];
 
+export default function AboutSection() {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-surface">
+    <section id="about" className="py-24 lg:py-32 bg-surface" aria-labelledby="about-heading">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -26,9 +27,13 @@ export default function AboutSection() {
             ABOUT
           </motion.span>
 
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+          {/* ── Top: headline + narrative ── */}
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 mb-16">
             <motion.div variants={fadeInUp} custom={0}>
-              <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.02em] text-textPrimary mb-8">
+              <h2
+                id="about-heading"
+                className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.02em] text-textPrimary mb-8"
+              >
                 The intersection of{" "}
                 <span className="text-gradient">design, AI,</span> and
                 engineering
@@ -36,37 +41,20 @@ export default function AboutSection() {
 
               <div className="space-y-5 text-textMuted text-lg leading-relaxed">
                 {about.narrative.map((para, i) => (
-                  <p key={i}>
-                    {i === 1
-                      ? (
-                        <>
-                          So that's what I do. I{" "}
-                          <span className="text-textPrimary font-medium">
-                            design and build AI-powered digital products
-                          </span>{" "}
-                          — combining product thinking, UX design, and frontend
-                          engineering to create experiences that make complex
-                          technology feel intuitive and human.
-                        </>
-                      )
-                      : para}
-                  </p>
+                  <p key={i}>{para}</p>
                 ))}
               </div>
             </motion.div>
 
-            <motion.div
-              variants={fadeInUp}
-              custom={1}
-              className="lg:pt-16 space-y-8"
-            >
-              <div className="grid grid-cols-2 gap-6">
+            <motion.div variants={fadeInUp} custom={1} className="lg:pt-4 space-y-6">
+              {/* Stats grid */}
+              <div className="grid grid-cols-2 gap-4">
                 {about.stats.map((stat) => (
                   <div
                     key={stat.label}
                     className="bg-primary border border-borderSubtle rounded-2xl p-6 card-hover"
                   >
-                    <div className="text-[clamp(2rem,4vw,3rem)] font-bold text-gradient mb-2">
+                    <div className="text-[clamp(2rem,4vw,3rem)] font-bold text-gradient mb-1">
                       {stat.number}
                     </div>
                     <div className="text-sm text-textMuted font-medium">
@@ -76,49 +64,75 @@ export default function AboutSection() {
                 ))}
               </div>
 
+              {/* What I do */}
               <div className="bg-primary border border-borderSubtle rounded-2xl p-6 lg:p-8">
-                <h3 className="text-lg font-semibold text-textPrimary mb-4">
+                <h3 className="text-base font-semibold text-textPrimary mb-4 font-mono uppercase tracking-wider text-accent">
                   What I Do
                 </h3>
                 <div className="space-y-3">
-                  {about.whatIDo.map((item, i) => (
-                    <div
-                      key={item.label}
-                      className="flex items-center gap-3 text-textMuted"
-                    >
-                      {(() => {
-                        const Icon = whatIDoIcons[i % whatIDoIcons.length];
-                        return (
-                          <Icon
-                            size={16}
-                            className={
-                              item.accent
-                                ? "text-accent"
-                                : "text-accentSecondary"
-                            }
-                          />
-                        );
-                      })()}
-                      <span>{item.label}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-primary border border-borderSubtle rounded-2xl p-6 lg:p-8">
-                <h3 className="text-lg font-semibold text-textPrimary mb-4">
-                  Philosophy
-                </h3>
-                <p className="text-sm text-textMuted leading-relaxed">
-                  {about.philosophy}
-                </p>
-                <div className="mt-4 flex items-center gap-2 text-xs text-textMuted">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                  Available for new opportunities
+                  {about.whatIDo.map((item, i) => {
+                    const Icon = whatIDoIcons[i % whatIDoIcons.length];
+                    return (
+                      <div key={item.label} className="flex items-center gap-3 text-textMuted">
+                        <Icon
+                          size={16}
+                          className={item.accent ? "text-accent" : "text-accentSecondary"}
+                          aria-hidden="true"
+                        />
+                        <span className="text-sm">{item.label}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>
           </div>
+
+          {/* ── Tech Stack ── */}
+          <motion.div
+            variants={fadeInUp}
+            custom={2}
+            className="bg-primary border border-borderSubtle rounded-2xl p-6 lg:p-10"
+          >
+            <h3 className="text-base font-semibold text-textPrimary mb-8 font-mono uppercase tracking-wider text-accent">
+              Tech Stack
+            </h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {techCategories.map(({ label, key, color }) => (
+                <div key={key}>
+                  <p className={`text-xs font-mono font-semibold uppercase tracking-widest mb-3 ${color}`}>
+                    {label}
+                  </p>
+                  <ul className="space-y-2">
+                    {about.techStack[key].map((tech) => (
+                      <li key={tech} className="text-sm text-textMuted">
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* ── Philosophy ── */}
+          <motion.div
+            variants={fadeInUp}
+            custom={3}
+            className="mt-6 bg-gradient-to-r from-[rgba(255,107,53,0.06)] to-transparent border border-[rgba(255,107,53,0.12)] rounded-2xl p-6 lg:p-8"
+          >
+            <div className="flex items-start gap-4">
+              <div className="w-1 self-stretch rounded-full bg-gradient-to-b from-accent to-accentSecondary shrink-0" aria-hidden="true" />
+              <div>
+                <p className="text-xs font-mono font-semibold uppercase tracking-widest text-accent mb-3">
+                  Philosophy
+                </p>
+                <p className="text-textMuted leading-relaxed text-lg">
+                  {about.philosophy}
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

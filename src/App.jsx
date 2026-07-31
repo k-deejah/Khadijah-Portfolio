@@ -6,6 +6,7 @@ import ProcessSection from "./components/ProcessSection.jsx";
 import AboutSection from "./components/AboutSection.jsx";
 import ProjectsSection from "./components/ProjectsSection.jsx";
 import OpenSourceSection from "./components/OpenSourceSection.jsx";
+import CaseStudiesSection from "./components/CaseStudiesSection.jsx";
 import WritingSection from "./components/WritingSection.jsx";
 import SkillsSection from "./components/SkillsSection.jsx";
 import ExperienceSection from "./components/ExperienceSection.jsx";
@@ -25,12 +26,15 @@ function App() {
     <div className="min-h-screen bg-primary text-textPrimary font-sans antialiased">
       <Navbar scrolled={scrolled} />
       <main>
-        <HeroSection />
+        <section id="home" aria-label="Hero">
+          <HeroSection />
+        </section>
         <ProblemSection />
         <ProcessSection />
         <ProjectsSection />
         <AboutSection />
         <OpenSourceSection />
+        <CaseStudiesSection />
         <WritingSection />
         <SkillsSection />
         <ExperienceSection />

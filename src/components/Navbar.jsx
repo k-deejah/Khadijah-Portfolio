@@ -5,8 +5,9 @@ import { navLinks } from "../data/portfolio.js";
 
 const Logo = () => (
   <a
-    href="#"
+    href="#home"
     className="text-xl font-mono font-bold text-textMuted hover:text-accent transition-colors"
+    aria-label="Khadijah Abdulwasii — Home"
   >
     KA.
   </a>
@@ -14,7 +15,7 @@ const Logo = () => (
 
 function DesktopNav() {
   return (
-    <div className="hidden md:flex items-center gap-10">
+    <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-8">
       {navLinks.map((link) => (
         <a
           key={link.name}
@@ -26,12 +27,14 @@ function DesktopNav() {
         </a>
       ))}
       <a
-        href="#contact"
-        className="text-sm font-medium bg-accent hover:bg-accentSecondary text-white px-6 py-2.5 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(255,107,53,.3)]"
+        href="/Khadijah-Portfolio/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-sm font-medium bg-accent hover:bg-accentSecondary text-white px-6 py-2.5 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(255,107,53,.3)] hover:shadow-[0_0_30px_rgba(255,107,53,.45)]"
       >
         Resume
       </a>
-    </div>
+    </nav>
   );
 }
 
@@ -43,31 +46,45 @@ function MobileNav() {
       <button
         onClick={() => setOpen(!open)}
         className="text-textPrimary p-2"
-        aria-label="Toggle menu"
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
+        aria-controls="mobile-nav"
       >
         {open ? <X size={22} /> : <Menu size={22} />}
       </button>
 
       {open && (
         <motion.div
+          id="mobile-nav"
+          role="dialog"
+          aria-label="Mobile navigation"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
-          className="absolute top-full left-0 right-0 bg-surface border-b border-borderSubtle py-6"
+          className="absolute top-full left-0 right-0 bg-surface border-b border-borderSubtle py-6 z-40"
         >
-          <div className="flex flex-col gap-4 px-6">
+          <nav className="flex flex-col gap-1 px-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-lg font-medium text-textMuted hover:text-textPrimary transition-colors"
+                className="text-base font-medium text-textMuted hover:text-textPrimary hover:bg-[rgba(255,107,53,0.05)] px-3 py-2.5 rounded-lg transition-all duration-200"
               >
                 {link.name}
               </a>
             ))}
-          </div>
+            <a
+              href="/Khadijah-Portfolio/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="mt-3 text-sm font-medium bg-accent hover:bg-accentSecondary text-white px-6 py-2.5 rounded-full transition-all duration-300 text-center"
+            >
+              Resume
+            </a>
+          </nav>
         </motion.div>
       )}
     </div>
@@ -76,7 +93,7 @@ function MobileNav() {
 
 export default function Navbar({ scrolled }) {
   return (
-    <motion.nav
+    <motion.header
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -93,6 +110,6 @@ export default function Navbar({ scrolled }) {
           <MobileNav />
         </div>
       </div>
-    </motion.nav>
+    </motion.header>
   );
 }
