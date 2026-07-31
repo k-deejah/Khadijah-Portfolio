@@ -38,7 +38,7 @@ function PortraitVisual() {
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-transparent" />
 
-        {/* Portrait placeholder — replace src with real photo */}
+        {/* Portrait visual */}
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
           <motion.div
             animate={{ scale: [1, 1.06, 1] }}

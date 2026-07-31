@@ -4,7 +4,6 @@ import {
   ExternalLink,
   BookOpen,
   ChevronRight,
-  Clock,
   Shield,
   Code2,
   Layers,
@@ -110,7 +109,7 @@ function ProjectThumbnail({ project }) {
   );
 }
 
-// ─── Live Demo / Coming Soon / GitHub / Case Study buttons ────────
+// ─── Project action buttons ───────────────────────────────────────
 function ProjectButtons({ project, size = "md" }) {
   const t = theme[project.accent] || theme.amber;
   const px = size === "sm" ? "px-4 py-2 text-xs" : "px-5 py-2.5 text-sm";
@@ -132,7 +131,7 @@ function ProjectButtons({ project, size = "md" }) {
         </a>
       )}
 
-      {/* Live Demo OR Coming Soon */}
+      {/* Live Demo only — shown when live */}
       {project.liveStatus === "live" && project.live ? (
         <a
           href={project.live}
@@ -144,15 +143,6 @@ function ProjectButtons({ project, size = "md" }) {
           <ExternalLink size={iconSize} aria-hidden="true" />
           Live Demo
         </a>
-      ) : project.liveStatus === "coming-soon" ? (
-        <span
-          className={`inline-flex items-center gap-1.5 border border-borderSubtle text-textMuted ${px} rounded-full font-medium cursor-default select-none opacity-70`}
-          aria-label={`${project.title} live demo coming soon`}
-          title="Live demo coming soon"
-        >
-          <Clock size={iconSize} aria-hidden="true" />
-          Coming Soon
-        </span>
       ) : null}
 
       {/* Case Study — only if URL exists */}
@@ -325,29 +315,10 @@ export default function ProjectsSection() {
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-lg text-textMuted max-w-2xl mb-4"
+            className="text-lg text-textMuted max-w-2xl mb-16"
           >
             AI tools, developer tooling, marketplaces, and design systems — each starting with a user problem.
           </motion.p>
-
-          {/* Status legend */}
-          <motion.div
-            variants={fadeInUp}
-            className="flex flex-wrap items-center gap-5 mb-16 text-xs text-textMuted font-mono"
-          >
-            <span className="flex items-center gap-2">
-              <ExternalLink size={12} className="text-accent" aria-hidden="true" />
-              Live
-            </span>
-            <span className="flex items-center gap-2">
-              <Clock size={12} aria-hidden="true" />
-              Deployment in progress
-            </span>
-            <span className="flex items-center gap-2">
-              <Github size={12} aria-hidden="true" />
-              Open source
-            </span>
-          </motion.div>
 
           {/* Project list */}
           <div className="space-y-24 lg:space-y-32">
