@@ -8,6 +8,7 @@ export default function ContactSection() {
     <section
       id="contact"
       className="py-24 lg:py-32 bg-surface relative overflow-hidden"
+      aria-labelledby="contact-heading"
     >
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(255,107,53,.08)_0%,transparent_70%)] pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -26,6 +27,7 @@ export default function ContactSection() {
           </motion.span>
 
           <motion.h2
+            id="contact-heading"
             variants={fadeInUp}
             className="text-[clamp(2rem,5vw,4rem)] font-bold leading-tight tracking-[-0.02em] text-textPrimary mb-6"
           >
@@ -53,7 +55,9 @@ export default function ContactSection() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a
-              href="/resume.pdf"
+              href="/Khadijah-Portfolio/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accentSecondary text-white px-8 py-4 rounded-full font-medium transition-all duration-300 shadow-[0_0_30px_rgba(255,107,53,.3)]"
             >
               <Download size={18} />

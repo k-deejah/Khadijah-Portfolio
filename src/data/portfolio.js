@@ -922,12 +922,58 @@ export const socialLinks = [
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/your-linkedin",
+    href: "https://www.linkedin.com/in/khadijah-abdulwasii",
     initial: "L",
   },
   {
     name: "X (Twitter)",
     href: "https://twitter.com/crypt-deejah",
     initial: "T",
+  },
+];
+
+// ─── EXPERIENCE (kept for ExperienceSection compatibility) ────────
+export const experience = [
+  {
+    role: "Open Source Maintainer & Contributor",
+    company: "GrantFox",
+    period: "July 2026 — Present",
+    description:
+      "Frontend development, design systems, and contributor community growth.",
+    highlights: [
+      "Built grant application tracker",
+      "Established design system",
+      "Onboarded 10+ contributors",
+    ],
+    link: "https://maintainer.grantfox.xyz/profile/k-deejah",
+    linkLabel: "View Profile",
+  },
+  {
+    role: "Open Source Maintainer & Contributor",
+    company: "Drips Wave (Stellar)",
+    period: "May 2026 — Present",
+    description:
+      "UX improvements, accessibility, and onboarding for a decentralised streaming payments protocol.",
+    highlights: [
+      "Redesigned core streaming flow",
+      "Improved onboarding experience",
+      "30+ PRs merged",
+    ],
+    link: "https://www.drips.network/wave/stellar",
+    linkLabel: "View Project",
+  },
+  {
+    role: "AI Design Engineer",
+    company: "Freelance",
+    period: "2023 — Present",
+    description:
+      "End-to-end product design and frontend engineering for AI-powered products.",
+    highlights: [
+      "Shipped 6+ production projects",
+      "AI + Design + Engineering",
+      "Remote collaboration globally",
+    ],
+    link: null,
+    linkLabel: null,
   },
 ];

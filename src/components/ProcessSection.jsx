@@ -4,7 +4,11 @@ import { fadeInUp, staggerContainer } from "../lib/animations.js";
 
 export default function ProcessSection() {
   return (
-    <section className="py-24 lg:py-32 bg-surface">
+    <section
+      id="process"
+      className="py-24 lg:py-32 bg-surface"
+      aria-labelledby="process-heading"
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -20,6 +24,7 @@ export default function ProcessSection() {
           </motion.span>
 
           <motion.h2
+            id="process-heading"
             variants={fadeInUp}
             className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.02em] text-textPrimary mb-4"
           >
@@ -38,7 +43,7 @@ export default function ProcessSection() {
                 key={step.num}
                 variants={fadeInUp}
                 custom={i}
-                className="flex-1 bg-primary border border-borderSubtle rounded-2xl p-8 transition-all duration-300 hover:border-accent/20"
+                className="flex-1 bg-primary border border-borderSubtle rounded-2xl p-8 card-lift"
               >
                 <span className="font-mono text-sm font-medium text-accent uppercase tracking-wider mb-4 block">
                   {step.num}

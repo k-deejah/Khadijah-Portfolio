@@ -25,7 +25,7 @@ export default function WritingSection() {
           variants={staggerContainer}
         >
           <motion.span variants={fadeInUp} className="section-label mb-4 block">
-            BUILDING IN PUBLIC
+            WRITING
           </motion.span>
           <motion.h2
             id="writing-heading"

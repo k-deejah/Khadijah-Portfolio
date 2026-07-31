@@ -22,7 +22,7 @@ const iconMap = {
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-24 lg:py-32">
+    <section id="skills" className="py-24 lg:py-32" aria-labelledby="skills-heading">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -37,6 +37,7 @@ export default function SkillsSection() {
             TECH STACK
           </motion.span>
           <motion.h2
+            id="skills-heading"
             variants={fadeInUp}
             className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.02em] text-textPrimary mb-4"
           >
@@ -57,7 +58,7 @@ export default function SkillsSection() {
                   key={category.title}
                   variants={fadeInUp}
                   custom={i}
-                  className="bg-surface border border-borderSubtle rounded-2xl p-8 card-hover group"
+                  className="bg-surface border border-borderSubtle rounded-2xl p-8 card-lift group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/20 to-accentSecondary/10 flex items-center justify-center border border-accent/20 mb-6 group-hover:scale-110 transition-transform duration-300">
                     <Icon size={24} className="text-accent" />
