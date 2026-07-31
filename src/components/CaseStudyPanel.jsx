@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { ChevronRight, Clock, Tag, User, Layers } from "lucide-react";
-import { fadeInUp, staggerContainer } from "../lib/animations.js";
+import { ChevronRight, User } from "lucide-react";
 
 // ─── Colour theme ─────────────────────────────────────────────────
 const theme = {
