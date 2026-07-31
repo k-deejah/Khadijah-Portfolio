@@ -51,7 +51,7 @@ export default function AboutSection() {
                 {about.stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="bg-primary border border-borderSubtle rounded-2xl p-6 card-hover"
+                    className="bg-primary border border-borderSubtle rounded-2xl p-6 card-lift"
                   >
                     <div className="text-[clamp(2rem,4vw,3rem)] font-bold text-gradient mb-1">
                       {stat.number}
@@ -64,7 +64,7 @@ export default function AboutSection() {
               </div>
 
               {/* What I do */}
-              <div className="bg-primary border border-borderSubtle rounded-2xl p-6 lg:p-8">
+              <div className="bg-primary border border-borderSubtle rounded-2xl p-6 lg:p-8 card-lift">
                 <h3 className="text-base font-semibold text-textPrimary mb-4 font-mono uppercase tracking-wider text-accent">
                   What I Do
                 </h3>
@@ -102,13 +102,16 @@ export default function AboutSection() {
                   <p className={`text-xs font-mono font-semibold uppercase tracking-widest mb-3 ${color}`}>
                     {label}
                   </p>
-                  <ul className="space-y-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {about.techStack[key].map((tech) => (
-                      <li key={tech} className="text-sm text-textMuted">
+                      <span
+                        key={tech}
+                        className="tech-pill text-xs text-textMuted bg-surfaceElevated px-2.5 py-1 rounded-lg border border-borderSubtle"
+                      >
                         {tech}
-                      </li>
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               ))}
             </div>

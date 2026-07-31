@@ -87,7 +87,7 @@ function PortraitVisual() {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -left-10 top-1/4 bg-surface border border-borderSubtle rounded-xl px-4 py-3 shadow-xl"
+        className="absolute -left-10 top-1/4 bg-surface border border-borderSubtle rounded-xl px-4 py-3 shadow-xl card-lift"
         aria-hidden="true"
       >
         <div className="flex items-center gap-2">
@@ -100,7 +100,7 @@ function PortraitVisual() {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute -right-4 bottom-1/4 bg-surface border border-borderSubtle rounded-xl px-4 py-3 shadow-xl"
+        className="absolute -right-4 bottom-1/4 bg-surface border border-borderSubtle rounded-xl px-4 py-3 shadow-xl card-lift"
         aria-hidden="true"
       >
         <div className="flex items-center gap-2">
@@ -170,7 +170,8 @@ export default function HeroSection() {
               custom={2}
               className="text-lg lg:text-xl text-textMuted leading-relaxed max-w-xl mb-8"
             >
-              {hero.subheadline}
+              Design · AI · Frontend Engineering.
+              I build products end-to-end — from user research to production code.
             </motion.p>
 
             {/* Domain pills */}
