@@ -323,32 +323,367 @@ export const projects = [
 ];
 
 // ─── CASE STUDIES ─────────────────────────────────────────────────
+// Summary cards shown in the section index
 export const caseStudies = [
   {
-    title: "LineProof: AI Document Verification",
-    subtitle: "Designing an AI-powered trust layer for document authenticity",
-    tags: ["AI PRODUCT", "UX DESIGN", "FRONTEND"],
+    id: "food-delivery",
+    title: "Food Delivery App",
+    subtitle: "Redesigning checkout to reduce cart abandonment",
+    tags: ["UX RESEARCH", "PRODUCT DESIGN", "MOBILE"],
     summary:
-      "How I scoped, designed, and built an AI document verification tool — from problem definition through to a production React application.",
-    href: "#",
+      "An end-to-end UX redesign covering research, information architecture, prototyping, and design system handoff for a food delivery platform with high cart abandonment.",
   },
   {
-    title: "Escrow UX: Designing for Trust",
-    subtitle: "Making on-chain transactions legible to non-technical users",
+    id: "escrow-marketplace",
+    title: "Escrow Marketplace",
+    subtitle: "Designing trust into on-chain peer-to-peer transactions",
     tags: ["WEB3 UX", "FINTECH", "FRONTEND"],
     summary:
-      "How I approached the challenge of making blockchain escrow state visible and understandable for buyers and sellers without Web3 experience.",
-    href: "#",
+      "How I designed and built a marketplace UI that makes blockchain escrow state legible and trustworthy for buyers and sellers without Web3 experience.",
   },
   {
-    title: "Velo System: From Chaos to Consistency",
-    subtitle: "Building a design system that engineering teams actually adopt",
-    tags: ["DESIGN SYSTEMS", "ENGINEERING", "DOCUMENTATION"],
+    id: "web3-nft-platform",
+    title: "Web3 NFT Platform",
+    subtitle: "Making Web3 accessible without dumbing it down",
+    tags: ["WEB3", "NFT", "PRODUCT DESIGN"],
     summary:
-      "The process behind Velo — from design tokens to a React component library with Storybook documentation and a Figma-to-code sync workflow.",
-    href: "#",
+      "Designing a progressive-disclosure NFT experience — approachable for newcomers, powerful for collectors managing multi-wallet portfolios.",
   },
 ];
+
+// Full case study content — placeholder sections clearly labelled
+// Replace placeholder values with real content when available
+export const caseStudyDetails = {
+  "food-delivery": {
+    id: "food-delivery",
+    title: "Food Delivery App",
+    subtitle: "Redesigning checkout to reduce cart abandonment",
+    tags: ["UX RESEARCH", "PRODUCT DESIGN", "MOBILE"],
+    role: "Lead Product Designer",
+    duration: "[Placeholder: project duration]",
+    team: "[Placeholder: team size and composition]",
+    accent: "green",
+
+    overview:
+      "This project was a full end-to-end UX redesign of a food delivery platform that was experiencing high cart abandonment and low repeat orders. My responsibility covered the full design process — from initial user research through to a complete design system handoff ready for engineering.",
+
+    problem:
+      "Users were abandoning their carts at a high rate. The existing product had an overwhelming menu structure with no clear hierarchy, unclear delivery time estimates, and a fragmented multi-step checkout that required too many decisions at payment. The result was a confusing, friction-heavy experience that pushed users to competitors.",
+
+    goals: [
+      "Reduce cart abandonment by simplifying the checkout flow",
+      "Improve menu browsability through better information architecture",
+      "Surface delivery estimates earlier in the user journey",
+      "Create a reusable design system for consistent future development",
+      "[Placeholder: add additional goals when available]",
+    ],
+
+    research: {
+      summary:
+        "[Placeholder: describe your research approach — interviews, surveys, analytics review, competitive analysis]",
+      methods: [
+        "[Placeholder: user interviews — number of participants, key themes]",
+        "[Placeholder: usability testing on existing product]",
+        "[Placeholder: analytics review — drop-off points, funnel data]",
+        "[Placeholder: competitive analysis — key findings]",
+      ],
+      keyInsights: [
+        "[Placeholder: insight 1 from research]",
+        "[Placeholder: insight 2 from research]",
+        "[Placeholder: insight 3 from research]",
+      ],
+    },
+
+    personas: [
+      {
+        name: "[Placeholder: Persona Name]",
+        type: "[Placeholder: e.g. Busy Professional]",
+        description: "[Placeholder: describe this user segment and their key needs, frustrations, and goals]",
+      },
+      {
+        name: "[Placeholder: Persona Name]",
+        type: "[Placeholder: e.g. Frequent Orderer]",
+        description: "[Placeholder: describe this user segment and their key needs, frustrations, and goals]",
+      },
+    ],
+
+    userJourney:
+      "[Placeholder: describe the key stages of the user journey — discovery, browsing, selecting, checkout, confirmation. Highlight where friction existed and how the redesign addressed each stage]",
+
+    informationArchitecture:
+      "[Placeholder: describe the IA changes made — menu hierarchy, category structure, navigation patterns, sitemap decisions and the reasoning behind them]",
+
+    wireframes:
+      "[Placeholder: describe the wireframing process — key screens explored, decisions made, iterations and what changed between versions]",
+
+    designSystem: {
+      summary:
+        "[Placeholder: describe the design system created — scope, components covered, token structure]",
+      components: [
+        "[Placeholder: component 1 — e.g. Button system with states]",
+        "[Placeholder: component 2 — e.g. Menu card variants]",
+        "[Placeholder: component 3 — e.g. Checkout step indicators]",
+        "[Placeholder: component 4 — e.g. Order status states]",
+      ],
+    },
+
+    highFidelityDesigns:
+      "[Placeholder: describe the high-fidelity design decisions — visual language, colour use, typography choices, spacing principles, and how they support the UX goals]",
+
+    developmentProcess:
+      "[Placeholder: describe how the handoff was structured — design tokens, Figma component annotations, developer notes, and how engineering picked up the work]",
+
+    tech: ["Figma", "FigJam", "Design System", "Prototyping", "Usability Testing"],
+
+    challenges: [
+      "[Placeholder: describe challenge 1 — what made this difficult and how you worked through it]",
+      "[Placeholder: describe challenge 2]",
+      "[Placeholder: describe challenge 3]",
+    ],
+
+    solutions: [
+      "Redesigned the information architecture to introduce progressive disclosure across the menu, reducing cognitive load at the browsing stage",
+      "Consolidated a 5-step checkout into a single-screen flow, removing unnecessary decision points",
+      "Introduced inline delivery estimate surfaces earlier in the journey to set expectations before cart commitment",
+      "[Placeholder: add additional solutions]",
+    ],
+
+    results:
+      "[Placeholder: describe measurable or qualitative outcomes — what changed after the redesign was implemented, stakeholder feedback, usability test results]",
+
+    lessonsLearned: [
+      "[Placeholder: lesson 1 — what you would do differently or what this project taught you]",
+      "[Placeholder: lesson 2]",
+      "[Placeholder: lesson 3]",
+    ],
+
+    futureImprovements: [
+      "[Placeholder: improvement 1 — what you would explore next if the project continued]",
+      "[Placeholder: improvement 2]",
+      "[Placeholder: improvement 3]",
+    ],
+  },
+
+  "escrow-marketplace": {
+    id: "escrow-marketplace",
+    title: "Escrow Marketplace",
+    subtitle: "Designing trust into on-chain peer-to-peer transactions",
+    tags: ["WEB3 UX", "FINTECH", "FRONTEND"],
+    role: "Lead Product Designer & Frontend Engineer",
+    duration: "[Placeholder: project duration]",
+    team: "[Placeholder: team size and composition]",
+    accent: "amber",
+
+    overview:
+      "This project combined product design and frontend engineering to build a peer-to-peer marketplace with an integrated smart contract escrow system. The core challenge was making blockchain escrow logic legible and trustworthy to users who had no Web3 experience — while still giving experienced users the transparency they expected.",
+
+    problem:
+      "Peer-to-peer digital transactions lacked a trust layer. Buyers feared sending payment without receiving goods. Sellers feared chargebacks and platform bias. Existing escrow solutions were either opaque, centralised intermediaries that added fees and delays, or raw smart contracts that required technical knowledge to use safely.",
+
+    goals: [
+      "Make escrow state legible to non-technical users at every transaction stage",
+      "Reduce trust friction between buyers and sellers",
+      "Design a dispute resolution flow that feels fair to both parties",
+      "Build a frontend that correctly reflects on-chain contract state in real time",
+      "[Placeholder: add additional goals when available]",
+    ],
+
+    research: {
+      summary:
+        "[Placeholder: describe your research approach — who you spoke to, what you looked at, what questions you were trying to answer]",
+      methods: [
+        "[Placeholder: interviews with buyers and sellers in P2P markets]",
+        "[Placeholder: audit of existing escrow and marketplace UX patterns]",
+        "[Placeholder: review of smart contract interaction patterns in Web3 products]",
+        "[Placeholder: competitive analysis]",
+      ],
+      keyInsights: [
+        "[Placeholder: insight 1 — e.g. users don't understand what 'locked in escrow' means]",
+        "[Placeholder: insight 2]",
+        "[Placeholder: insight 3]",
+      ],
+    },
+
+    personas: [
+      {
+        name: "[Placeholder: Persona Name]",
+        type: "[Placeholder: e.g. First-time Buyer]",
+        description: "[Placeholder: describe this user — needs, fears around trust, prior experience with P2P transactions]",
+      },
+      {
+        name: "[Placeholder: Persona Name]",
+        type: "[Placeholder: e.g. Experienced Seller]",
+        description: "[Placeholder: describe this user — what they care about, how they evaluate platform trustworthiness]",
+      },
+    ],
+
+    userJourney:
+      "[Placeholder: walk through the buyer and seller journeys — from listing creation through to funds released. Describe where the escrow state intersects with each user's experience]",
+
+    informationArchitecture:
+      "[Placeholder: describe the IA decisions — how buyer and seller flows are structured, how transaction states are organised in the UI, dashboard information hierarchy]",
+
+    wireframes:
+      "[Placeholder: describe the wireframing process — key screens, how the escrow state UI evolved across iterations]",
+
+    designSystem: {
+      summary:
+        "[Placeholder: describe any design system work done for this project — components, status patterns, state indicators]",
+      components: [
+        "[Placeholder: escrow status indicator component]",
+        "[Placeholder: transaction timeline component]",
+        "[Placeholder: dispute resolution modal]",
+        "[Placeholder: wallet connection flow]",
+      ],
+    },
+
+    highFidelityDesigns:
+      "[Placeholder: describe the visual design decisions — how colour, typography, and iconography communicate trust, status, and safety throughout the interface]",
+
+    developmentProcess:
+      "[Placeholder: describe the frontend implementation — how React state management was used to reflect contract state, key technical decisions made during build]",
+
+    tech: ["React", "TypeScript", "Figma", "Node.js", "Solidity", "Tailwind CSS", "Ethers.js"],
+
+    challenges: [
+      "[Placeholder: challenge 1 — e.g. representing asynchronous on-chain state in a synchronous UI]",
+      "[Placeholder: challenge 2 — e.g. designing for error states when transactions fail]",
+      "[Placeholder: challenge 3]",
+    ],
+
+    solutions: [
+      "Designed a real-time escrow status indicator that maps on-chain contract states to plain-language UI states users can understand",
+      "Created a step-by-step transaction timeline that gives both buyer and seller clear visibility into where funds are and what happens next",
+      "Built a dispute flow with clearly structured evidence submission and neutral status language",
+      "[Placeholder: add additional solutions]",
+    ],
+
+    results:
+      "[Placeholder: describe outcomes — usability test findings, stakeholder feedback, any measurable improvements observed]",
+
+    lessonsLearned: [
+      "[Placeholder: lesson 1 — what designing for blockchain state taught you about UX for async systems]",
+      "[Placeholder: lesson 2]",
+      "[Placeholder: lesson 3]",
+    ],
+
+    futureImprovements: [
+      "[Placeholder: improvement 1 — e.g. multi-currency escrow support]",
+      "[Placeholder: improvement 2 — e.g. automated dispute resolution]",
+      "[Placeholder: improvement 3]",
+    ],
+  },
+
+  "web3-nft-platform": {
+    id: "web3-nft-platform",
+    title: "Web3 NFT Platform",
+    subtitle: "Making Web3 accessible without dumbing it down",
+    tags: ["WEB3", "NFT", "PRODUCT DESIGN"],
+    role: "Lead Product Designer",
+    duration: "[Placeholder: project duration]",
+    team: "[Placeholder: team size and composition]",
+    accent: "purple",
+
+    overview:
+      "This project was a product design engagement for a Web3 NFT discovery and portfolio management platform. The core design challenge was building an experience that genuinely onboarded newcomers to Web3 without compromising the depth and transparency that experienced NFT collectors required.",
+
+    problem:
+      "NFT platforms had earned a reputation for confusing, exclusionary UX. Wallet connections, gas fee explanations, and blockchain terminology created high barriers for mainstream users. At the same time, experienced collectors needed granular control and data transparency that most consumer-friendly platforms stripped away.",
+
+    goals: [
+      "Design an onboarding experience that successfully brings non-Web3 users into the platform",
+      "Progressive-disclose Web3 complexity without hiding it",
+      "Build a portfolio management experience useful to multi-wallet collectors",
+      "Make the platform feel trustworthy and professional, not speculative",
+      "[Placeholder: add additional goals when available]",
+    ],
+
+    research: {
+      summary:
+        "[Placeholder: describe your research approach — who you interviewed, what experience levels were represented, what questions drove the research]",
+      methods: [
+        "[Placeholder: interviews across Web3 experience levels — novice, intermediate, experienced]",
+        "[Placeholder: usability testing on competing platforms]",
+        "[Placeholder: analysis of onboarding drop-off patterns in Web3 products]",
+        "[Placeholder: competitive audit of NFT platform UX patterns]",
+      ],
+      keyInsights: [
+        "[Placeholder: insight 1 — e.g. novice users abandon at wallet connection because they don't understand what a wallet is]",
+        "[Placeholder: insight 2 — e.g. experienced users distrust platforms that hide on-chain data]",
+        "[Placeholder: insight 3]",
+      ],
+    },
+
+    personas: [
+      {
+        name: "[Placeholder: Persona Name]",
+        type: "[Placeholder: e.g. Web3 Newcomer]",
+        description: "[Placeholder: describe this user — background, motivations for exploring NFTs, key fears and barriers]",
+      },
+      {
+        name: "[Placeholder: Persona Name]",
+        type: "[Placeholder: e.g. NFT Collector]",
+        description: "[Placeholder: describe this user — collection size, how they currently manage portfolios, what they need from a platform]",
+      },
+    ],
+
+    userJourney:
+      "[Placeholder: describe the key journey stages — discovery, wallet connection, browsing, first purchase, portfolio management. Describe how the progressive disclosure strategy plays out across the journey]",
+
+    informationArchitecture:
+      "[Placeholder: describe the IA — how discovery, collection, and portfolio sections are structured, how navigation adapts to user experience level]",
+
+    wireframes:
+      "[Placeholder: describe the wireframing process — how the onboarding flow evolved, key screens explored for the portfolio management experience]",
+
+    designSystem: {
+      summary:
+        "[Placeholder: describe design system work — Web3-specific component patterns, wallet state components, NFT card variants]",
+      components: [
+        "[Placeholder: wallet connection flow component]",
+        "[Placeholder: NFT card variants — grid, list, detail]",
+        "[Placeholder: portfolio overview dashboard]",
+        "[Placeholder: gas fee explanation component]",
+      ],
+    },
+
+    highFidelityDesigns:
+      "[Placeholder: describe the visual design decisions — how the platform communicates trustworthiness and professionalism, colour and typography choices, how the UI shifts between novice and expert modes]",
+
+    developmentProcess:
+      "[Placeholder: describe the frontend prototype work — key screens prototyped in React, wallet connection implementation, how NFT data was surfaced]",
+
+    tech: ["Figma", "React", "TypeScript", "Ethers.js", "WalletConnect", "Tailwind CSS"],
+
+    challenges: [
+      "[Placeholder: challenge 1 — e.g. designing wallet connection for users who don't have a wallet yet]",
+      "[Placeholder: challenge 2 — e.g. surfacing gas fees in a way that doesn't frighten newcomers but doesn't hide them from experts]",
+      "[Placeholder: challenge 3]",
+    ],
+
+    solutions: [
+      "Designed a progressive-disclosure onboarding flow that introduces Web3 concepts gradually — users can browse without a wallet and connect only when they want to transact",
+      "Created a dual-mode portfolio interface — a simplified summary view for newcomers and a detailed on-chain data view for collectors",
+      "Built a gas fee explanation component that gives plain-language context without hiding the actual cost",
+      "[Placeholder: add additional solutions]",
+    ],
+
+    results:
+      "[Placeholder: describe outcomes — usability test findings, onboarding completion rates, stakeholder or user feedback]",
+
+    lessonsLearned: [
+      "[Placeholder: lesson 1 — what designing for Web3 newcomers taught you about progressive disclosure as a design pattern]",
+      "[Placeholder: lesson 2]",
+      "[Placeholder: lesson 3]",
+    ],
+
+    futureImprovements: [
+      "[Placeholder: improvement 1 — e.g. AI-powered collection recommendations]",
+      "[Placeholder: improvement 2 — e.g. multi-chain portfolio support]",
+      "[Placeholder: improvement 3]",
+    ],
+  },
+};
 
 // ─── OPEN SOURCE ──────────────────────────────────────────────────
 export const openSource = {
