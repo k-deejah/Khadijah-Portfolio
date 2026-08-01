@@ -1,20 +1,19 @@
 import { motion } from "framer-motion";
 import { skills } from "../data/portfolio.js";
 import { fadeInUp, staggerContainer } from "../lib/animations.js";
-import { Brain, Palette, Monitor, Server, Wrench, Hexagon, Code2 } from "lucide-react";
+import { Brain, Palette, Monitor, Wrench, Hexagon, Code2 } from "lucide-react";
 
 const iconMap = {
-  "AI & Machine Learning": Brain,
-  Design: Palette,
-  Frontend: Monitor,
-  Backend: Server,
-  "Developer Tools": Wrench,
-  Web3: Hexagon,
+  "AI":               Brain,
+  "Frontend":         Monitor,
+  "Product Design":   Palette,
+  "Web3":             Hexagon,
+  "Developer Tools":  Wrench,
 };
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-20 lg:py-28" aria-labelledby="skills-heading">
+    <section id="skills" className="py-24 lg:py-32" aria-labelledby="skills-heading">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial="hidden"

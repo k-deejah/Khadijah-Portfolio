@@ -169,6 +169,15 @@ function ProjectCard({ project, index, isOpen, onToggle }) {
               style={{ overflow: "hidden" }}
             >
               <div className="pt-5 mt-4 border-t border-borderSubtle grid md:grid-cols-2 gap-5">
+                {/* Impact — shown first when available */}
+                {project.impact && (
+                  <div className="md:col-span-2 bg-[rgba(255,107,53,0.04)] border border-[rgba(255,107,53,0.12)] rounded-xl px-4 py-3">
+                    <p className="text-[10px] font-mono font-semibold text-accent uppercase tracking-widest mb-1.5">
+                      Impact
+                    </p>
+                    <p className="text-sm text-textPrimary leading-relaxed font-medium">{project.impact}</p>
+                  </div>
+                )}
                 {/* Problem */}
                 <div>
                   <p className="text-[10px] font-mono font-semibold text-accent uppercase tracking-widest mb-2">

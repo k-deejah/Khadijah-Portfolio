@@ -3,7 +3,7 @@ import { MapPin, Globe, ArrowUpRight, Github, FileText } from "lucide-react";
 import { hero, personal } from "../data/portfolio.js";
 import { heroReveal, heroContainer, btnHoverAnim, btnTapAnim } from "../lib/animations.js";
 
-// Slowly-rotating crystal polygon — pure decorative accent
+// Slowly-rotating crystal polygon — decorative accent
 function CrystalAccent() {
   return (
     <motion.div
@@ -33,9 +33,9 @@ function CrystalAccent() {
 // Frosted glass stat card — desktop only
 function GlassStatCard() {
   const stats = [
-    { number: "6+", label: "Projects Shipped" },
-    { number: "4",  label: "Repos Maintained" },
-    { number: "2",  label: "OSS Orgs" },
+    { number: "6+", label: "Projects Shipped"  },
+    { number: "4",  label: "Repos Maintained"  },
+    { number: "2",  label: "OSS Orgs"          },
   ];
 
   return (
@@ -54,6 +54,9 @@ function GlassStatCard() {
           </div>
         ))}
       </div>
+
+      {/* Illustration placeholder — replace with professional illustration */}
+      {/* <img src="/illustration.png" alt="Khadijah Abdulwasii" className="mt-6 w-full rounded-2xl" /> */}
     </motion.div>
   );
 }
@@ -76,17 +79,14 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      {/* Crystal polygon accent */}
       <CrystalAccent />
-
-      {/* Glass stat card */}
       <GlassStatCard />
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full relative z-10 py-24">
         <motion.div variants={heroContainer} initial="hidden" animate="visible">
 
           {/* Availability badge */}
-          <motion.div variants={heroReveal} custom={0} className="mb-10">
+          <motion.div variants={heroReveal} custom={0} className="mb-8">
             <motion.span
               className="inline-flex items-center gap-2 text-accent text-xs font-mono font-medium px-4 py-2 rounded-full bg-[rgba(255,107,53,0.07)] border border-[rgba(255,107,53,0.18)]"
               whileHover={{ scale: 1.04 }}
@@ -116,17 +116,16 @@ export default function HeroSection() {
           <motion.p
             variants={heroReveal}
             custom={2}
-            className="text-lg lg:text-xl text-textMuted leading-relaxed max-w-xl mb-12"
+            className="text-lg lg:text-xl text-textMuted leading-relaxed max-w-xl mb-10"
           >
-            I bridge AI research and real users — designing and engineering products that are powerful
-            and actually easy to use. End-to-end, no handoff.
+            {hero.subheadline}
           </motion.p>
 
           {/* CTA group */}
           <motion.div
             variants={heroReveal}
             custom={3}
-            className="flex flex-wrap items-center gap-3 mb-16"
+            className="flex flex-wrap items-center gap-3 mb-10"
           >
             <motion.a
               href={hero.cta.primary.href}
@@ -157,14 +156,32 @@ export default function HeroSection() {
               whileTap={btnTapAnim}
             >
               <FileText size={14} className="text-accent" aria-hidden="true" />
-              Resume
+              {hero.cta.tertiary.label}
             </motion.a>
+          </motion.div>
+
+          {/* Credibility strip */}
+          <motion.div
+            variants={heroReveal}
+            custom={4}
+            className="flex flex-wrap items-center gap-2 mb-12"
+            aria-label="Areas of expertise"
+          >
+            {hero.credibilityStrip.map((item, i) => (
+              <span
+                key={item}
+                className="inline-flex items-center gap-1.5 text-[11px] font-mono text-textMuted px-3 py-1 rounded-full border border-borderSubtle bg-surfaceElevated"
+              >
+                <span className="w-1 h-1 rounded-full bg-accent opacity-70" aria-hidden="true" />
+                {item}
+              </span>
+            ))}
           </motion.div>
 
           {/* Meta row */}
           <motion.div
             variants={heroReveal}
-            custom={4}
+            custom={5}
             className="flex flex-wrap items-center gap-5 text-sm text-textMuted border-t border-borderSubtle pt-8"
           >
             <span className="flex items-center gap-2">
@@ -176,12 +193,12 @@ export default function HeroSection() {
               {personal.remote}
             </span>
             <motion.a
-              href={hero.cta.tertiary.href}
+              href="#contact"
               className="ml-auto text-accent font-medium flex items-center gap-1.5"
               whileHover={{ color: "#ff9f5a", x: 2 }}
               transition={{ duration: 0.18 }}
             >
-              {hero.cta.tertiary.label}
+              Let's Talk
               <ArrowUpRight size={13} aria-hidden="true" />
             </motion.a>
           </motion.div>

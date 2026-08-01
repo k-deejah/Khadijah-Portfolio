@@ -21,14 +21,14 @@ const links = [
   {
     label: "LinkedIn",
     value: "khadijah-abdulwasii",
-    href: "https://www.linkedin.com/in/khadijah-abdulwasii",
+    href: "https://www.linkedin.com/in/khadijah-abdulwasii-772b24237",
     icon: Linkedin,
     description: "Connect professionally",
   },
   {
     label: "X (Twitter)",
-    value: "crypt-deejah",
-    href: "https://twitter.com/crypt-deejah",
+    value: "@Crypt_deejah",
+    href: "https://twitter.com/Crypt_deejah",
     icon: Twitter,
     description: "Follow on X",
   },
@@ -119,7 +119,7 @@ export default function ContactSection() {
             ))}
           </motion.div>
 
-          {/* Resume button */}
+          {/* Resume button — coming soon placeholder */}
           <motion.div variants={fadeInUp}>
             <a
               href={`${import.meta.env.BASE_URL}resume.pdf`}
