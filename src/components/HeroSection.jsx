@@ -30,8 +30,8 @@ function CrystalAccent() {
   );
 }
 
-// Frosted glass stat card — desktop only
-function GlassStatCard() {
+// Frosted glass stat card + portrait illustration — desktop only
+function HeroVisual() {
   const stats = [
     { number: "6+", label: "Projects Shipped"  },
     { number: "4",  label: "Repos Maintained"  },
@@ -40,23 +40,52 @@ function GlassStatCard() {
 
   return (
     <motion.div
-      className="hidden lg:block absolute right-[6%] top-1/2 -translate-y-1/2 z-10"
+      className="hidden lg:flex flex-col items-center gap-6 absolute right-[4%] top-1/2 -translate-y-1/2 z-10"
       initial={{ opacity: 0, x: 30 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
-      aria-label="Quick stats"
+      transition={{ duration: 0.75, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      aria-label="Khadijah Abdulwasii"
     >
-      <div className="glass-card rounded-2xl px-7 py-6 w-[190px] space-y-5">
-        {stats.map(({ number, label }) => (
-          <div key={label}>
-            <div className="text-2xl font-bold text-gradient leading-none">{number}</div>
-            <div className="text-[11px] text-textMuted font-mono mt-1 leading-tight">{label}</div>
-          </div>
-        ))}
+      {/* Portrait illustration */}
+      <div className="relative w-[220px]">
+        {/* Accent glow ring behind image */}
+        <div
+          className="absolute inset-0 rounded-2xl pointer-events-none"
+          style={{
+            boxShadow: "0 0 60px rgba(255,107,53,0.18), 0 0 0 1px rgba(255,107,53,0.12)",
+            borderRadius: "1rem",
+          }}
+          aria-hidden="true"
+        />
+        <motion.img
+          src={`${import.meta.env.BASE_URL}illustration.png`}
+          alt="Khadijah Abdulwasii — AI Design Engineer"
+          className="w-full rounded-2xl relative z-10"
+          style={{ filter: "contrast(1.04) brightness(0.97)" }}
+          whileHover={{ scale: 1.015 }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        />
+        {/* Subtle orange tint overlay — ties portrait to brand palette */}
+        <div
+          className="absolute inset-0 rounded-2xl pointer-events-none z-20"
+          style={{
+            background: "linear-gradient(135deg, rgba(255,107,53,0.06) 0%, transparent 60%)",
+          }}
+          aria-hidden="true"
+        />
       </div>
 
-      {/* Illustration placeholder — replace with professional illustration */}
-      {/* <img src="/illustration.png" alt="Khadijah Abdulwasii" className="mt-6 w-full rounded-2xl" /> */}
+      {/* Glass stat card */}
+      <div className="glass-card rounded-2xl px-6 py-5 w-[220px]">
+        <div className="flex items-center justify-between">
+          {stats.map(({ number, label }, i) => (
+            <div key={label} className={`text-center ${i > 0 ? "border-l border-borderSubtle pl-4" : ""}`}>
+              <div className="text-xl font-bold text-gradient leading-none">{number}</div>
+              <div className="text-[10px] text-textMuted font-mono mt-1 leading-tight">{label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
     </motion.div>
   );
 }
@@ -80,10 +109,10 @@ export default function HeroSection() {
       />
 
       <CrystalAccent />
-      <GlassStatCard />
+      <HeroVisual />
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full relative z-10 py-24">
-        <motion.div variants={heroContainer} initial="hidden" animate="visible">
+        <motion.div variants={heroContainer} initial="hidden" animate="visible" className="lg:max-w-[55%]">
 
           {/* Availability badge */}
           <motion.div variants={heroReveal} custom={0} className="mb-8">
