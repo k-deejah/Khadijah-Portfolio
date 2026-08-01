@@ -17,6 +17,7 @@ export const navLinks = [
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
   { name: "Open Source", href: "#opensource" },
+  { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -310,6 +311,41 @@ export const projects = [
     live: null,
     liveStatus: "coming-soon",
     caseStudy: "#casestudies",
+    accent: "purple",
+    icon: "hexagon",
+  },
+];
+
+// ─── DESIGN PROJECTS (homepage Featured Projects) ─────────────────
+// Only product/UX work — open source projects live in openSource section
+export const designProjects = [
+  {
+    title: "Food Delivery App",
+    summary: "End-to-end UX redesign that reduced checkout friction.",
+    tags: ["UX DESIGN", "MOBILE", "PRODUCT"],
+    tech: ["Figma", "FigJam", "Prototyping"],
+    github: null,
+    live: null,
+    accent: "green",
+    icon: "box",
+  },
+  {
+    title: "Escrow Marketplace",
+    summary: "P2P marketplace with on-chain escrow and trust-first UX.",
+    tags: ["FINTECH", "WEB3"],
+    tech: ["React", "TypeScript", "Solidity", "Ethers.js", "Figma"],
+    github: null,
+    live: null,
+    accent: "amber",
+    icon: "shield",
+  },
+  {
+    title: "Web3 NFT Platform",
+    summary: "Progressive NFT discovery for newcomers and collectors alike.",
+    tags: ["WEB3", "NFT", "PRODUCT DESIGN"],
+    tech: ["Figma", "React", "TypeScript", "Ethers.js"],
+    github: null,
+    live: null,
     accent: "purple",
     icon: "hexagon",
   },
