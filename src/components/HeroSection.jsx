@@ -91,7 +91,7 @@ export default function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-borderSubtle text-textMuted px-6 py-3.5 rounded-full font-medium text-sm btn-scale"
-              whileHover={{ ...btnHoverAnim, borderColor: "rgba(255,107,53,0.35)", color: "#f5f5f5", backgroundColor: "rgba(255,107,53,0.04)" }}
+              whileHover={{ ...btnHoverAnim, borderColor: "rgba(255,107,53,0.35)", color: "var(--text-primary)", backgroundColor: "rgba(255,107,53,0.04)" }}
               whileTap={btnTapAnim}
             >
               <FileText size={14} className="text-accent" aria-hidden="true" />

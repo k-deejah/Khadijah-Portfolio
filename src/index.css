@@ -19,8 +19,30 @@
     --border-accent: rgba(255, 107, 53, 0.3);
   }
 
+  /* ── Light theme overrides ── */
+  [data-theme="light"] {
+    --background: #f8f7f4;
+    --surface: #ffffff;
+    --surface-elevated: #f0ede8;
+    --accent: #e8550a;
+    --accent-secondary: #f07030;
+    --text-primary: #111111;
+    --text-muted: #555555;
+    --border-subtle: rgba(0, 0, 0, 0.09);
+    --border-accent: rgba(232, 85, 10, 0.3);
+  }
+
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Smooth theme transition — only color properties, not transform/opacity */
+  body,
+  body * {
+    transition: background-color 250ms cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 250ms cubic-bezier(0.22, 1, 0.36, 1),
+                color 250ms cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 250ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   body {
@@ -32,8 +54,8 @@
   }
 
   ::selection {
-    background-color: rgba(255, 107, 53, 0.3);
-    color: #f5f5f5;
+    background-color: rgba(255, 107, 53, 0.25);
+    color: var(--text-primary);
   }
 
   ::-webkit-scrollbar {
@@ -45,12 +67,12 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #2a2a2a;
+    background: var(--surface-elevated);
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #3a3a3a;
+    background: var(--text-muted);
   }
 }
 

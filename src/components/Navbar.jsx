@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { navLinks } from "../data/portfolio.js";
 
 // Track which section is currently in view
@@ -15,9 +15,7 @@ function useActiveSection() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive("#" + entry.target.id);
-          }
+          if (entry.isIntersecting) setActive("#" + entry.target.id);
         });
       },
       { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
@@ -30,6 +28,34 @@ function useActiveSection() {
   return active;
 }
 
+// ─── Theme Toggle ─────────────────────────────────────────────────
+function ThemeToggle({ theme, onToggle }) {
+  const isDark = theme === "dark";
+
+  return (
+    <motion.button
+      onClick={onToggle}
+      className="relative w-9 h-9 rounded-full border border-borderSubtle bg-surface flex items-center justify-center text-textMuted hover:text-textPrimary hover:border-[rgba(255,107,53,0.3)] transition-colors duration-200"
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.92 }}
+      transition={{ duration: 0.16 }}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-pressed={!isDark}
+    >
+      <motion.span
+        key={theme}
+        initial={{ opacity: 0, rotate: -30, scale: 0.7 }}
+        animate={{ opacity: 1, rotate: 0, scale: 1 }}
+        exit={{ opacity: 0, rotate: 30, scale: 0.7 }}
+        transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+        style={{ display: "flex" }}
+      >
+        {isDark ? <Sun size={16} /> : <Moon size={16} />}
+      </motion.span>
+    </motion.button>
+  );
+}
+
 const Logo = () => (
   <a
     href="#home"
@@ -40,7 +66,7 @@ const Logo = () => (
   </a>
 );
 
-function DesktopNav() {
+function DesktopNav({ theme, onToggleTheme }) {
   const active = useActiveSection();
 
   return (
@@ -51,7 +77,7 @@ function DesktopNav() {
           <a
             key={link.name}
             href={link.href}
-            className={`text-sm font-mono font-medium uppercase tracking-wider transition-all duration-250 relative
+            className={`text-sm font-mono font-medium uppercase tracking-wider transition-colors duration-200 relative
               after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-accent
               after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.22,1,0.36,1)]
               ${isActive
@@ -64,12 +90,17 @@ function DesktopNav() {
           </a>
         );
       })}
+
+      {/* Theme toggle */}
+      <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+
+      {/* Resume */}
       <motion.a
         href="/Khadijah-Portfolio/resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-sm font-medium bg-accent text-white px-6 py-2.5 rounded-full shadow-[0_0_20px_rgba(255,107,53,.3)]"
-        whileHover={{ scale: 1.04, backgroundColor: "var(--accent-secondary)", boxShadow: "0 0 28px rgba(255,107,53,.45)" }}
+        className="text-sm font-medium bg-accent text-white px-6 py-2.5 rounded-full shadow-[0_0_20px_rgba(255,107,53,.25)]"
+        whileHover={{ scale: 1.04, boxShadow: "0 0 28px rgba(255,107,53,.45)" }}
         whileTap={{ scale: 0.97 }}
         transition={{ duration: 0.18 }}
       >
@@ -79,11 +110,14 @@ function DesktopNav() {
   );
 }
 
-function MobileNav() {
+function MobileNav({ theme, onToggleTheme }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:hidden">
+    <div className="md:hidden flex items-center gap-3">
+      {/* Theme toggle visible on mobile too */}
+      <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+
       <motion.button
         onClick={() => setOpen(!open)}
         className="text-textPrimary p-2"
@@ -120,7 +154,7 @@ function MobileNav() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-base font-medium text-textMuted hover:text-textPrimary hover:bg-[rgba(255,107,53,0.05)] px-3 py-2.5 rounded-lg transition-all duration-200"
+                className="text-base font-medium text-textMuted hover:text-textPrimary hover:bg-[rgba(255,107,53,0.05)] px-3 py-2.5 rounded-lg"
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.04, duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
@@ -133,7 +167,7 @@ function MobileNav() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-3 text-sm font-medium bg-accent hover:bg-accentSecondary text-white px-6 py-2.5 rounded-full transition-all duration-300 text-center"
+              className="mt-3 text-sm font-medium bg-accent text-white px-6 py-2.5 rounded-full text-center"
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: navLinks.length * 0.04, duration: 0.25 }}
@@ -147,7 +181,7 @@ function MobileNav() {
   );
 }
 
-export default function Navbar({ scrolled }) {
+export default function Navbar({ scrolled, theme, onToggleTheme }) {
   return (
     <motion.header
       initial={{ y: -24, opacity: 0 }}
@@ -162,8 +196,8 @@ export default function Navbar({ scrolled }) {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Logo />
-          <DesktopNav />
-          <MobileNav />
+          <DesktopNav theme={theme} onToggleTheme={onToggleTheme} />
+          <MobileNav theme={theme} onToggleTheme={onToggleTheme} />
         </div>
       </div>
     </motion.header>

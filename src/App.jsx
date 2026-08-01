@@ -7,9 +7,11 @@ import OpenSourceSection from "./components/OpenSourceSection.jsx";
 import SkillsSection from "./components/SkillsSection.jsx";
 import ContactSection from "./components/ContactSection.jsx";
 import Footer from "./components/Footer.jsx";
+import { useTheme } from "./lib/useTheme.js";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggle } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -19,21 +21,15 @@ function App() {
 
   return (
     <div className="min-h-screen bg-primary text-textPrimary font-sans antialiased">
-      <Navbar scrolled={scrolled} />
+      <Navbar scrolled={scrolled} theme={theme} onToggleTheme={toggle} />
       <main>
-        {/* 1 — Hero */}
         <section id="home" aria-label="Hero">
           <HeroSection />
         </section>
-        {/* 2 — About */}
         <AboutSection />
-        {/* 3 — Featured Projects (product/UX work only) */}
         <ProjectsSection />
-        {/* 4 — Open Source */}
         <OpenSourceSection />
-        {/* 5 — Skills & Technologies */}
         <SkillsSection />
-        {/* 6 — Contact */}
         <ContactSection />
       </main>
       <Footer />

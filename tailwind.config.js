@@ -4,15 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#090909",
-        surface: "#151515",
-        surfaceElevated: "#1a1a1a",
-        accent: "#FF6B35",
-        accentSecondary: "#FF9F5A",
-        textPrimary: "#F5F5F5",
-        textMuted: "#A0A0A0",
-        borderSubtle: "rgba(255,255,255,0.08)",
-        borderAccent: "rgba(255,107,53,0.3)",
+        // Reference CSS custom properties so both themes work automatically
+        primary: "var(--background)",
+        surface: "var(--surface)",
+        surfaceElevated: "var(--surface-elevated)",
+        accent: "var(--accent)",
+        accentSecondary: "var(--accent-secondary)",
+        textPrimary: "var(--text-primary)",
+        textMuted: "var(--text-muted)",
+        borderSubtle: "var(--border-subtle)",
+        borderAccent: "var(--border-accent)",
       },
       fontFamily: {
         sans: [
