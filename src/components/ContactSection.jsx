@@ -113,7 +113,7 @@ export default function ContactSection() {
           {/* Resume button */}
           <motion.div variants={fadeInUp}>
             <a
-              href="/Khadijah-Portfolio/resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary border border-borderSubtle hover:border-[rgba(255,107,53,0.35)] text-textPrimary px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 hover:bg-[rgba(255,107,53,0.04)] hover:shadow-[0_0_20px_rgba(255,107,53,0.09)]"

@@ -96,7 +96,7 @@ function DesktopNav({ theme, onToggleTheme }) {
 
       {/* Resume */}
       <motion.a
-        href="/Khadijah-Portfolio/resume.pdf"
+        href={`${import.meta.env.BASE_URL}resume.pdf`}
         target="_blank"
         rel="noopener noreferrer"
         className="text-sm font-medium bg-accent text-white px-6 py-2.5 rounded-full shadow-[0_0_20px_rgba(255,107,53,.25)]"
@@ -163,7 +163,7 @@ function MobileNav({ theme, onToggleTheme }) {
               </motion.a>
             ))}
             <motion.a
-              href="/Khadijah-Portfolio/resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}

@@ -69,7 +69,7 @@ export default function HeroSection() {
             <motion.a
               href={hero.cta.primary.href}
               className="inline-flex items-center gap-2 bg-accent text-white px-8 py-3.5 rounded-full font-medium text-sm shadow-[0_0_28px_rgba(255,107,53,0.28)] btn-scale"
-              whileHover={{ ...btnHoverAnim, backgroundColor: "var(--accent-secondary)", boxShadow: "0 0 40px rgba(255,107,53,0.42)" }}
+              whileHover={{ ...btnHoverAnim, backgroundColor: "#ff9f5a", boxShadow: "0 0 40px rgba(255,107,53,0.42)" }}
               whileTap={btnTapAnim}
             >
               {hero.cta.primary.label}
@@ -87,11 +87,11 @@ export default function HeroSection() {
             </motion.a>
 
             <motion.a
-              href="/Khadijah-Portfolio/resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-borderSubtle text-textMuted px-6 py-3.5 rounded-full font-medium text-sm btn-scale"
-              whileHover={{ ...btnHoverAnim, borderColor: "rgba(255,107,53,0.35)", color: "var(--text-primary)", backgroundColor: "rgba(255,107,53,0.04)" }}
+              whileHover={{ ...btnHoverAnim, borderColor: "rgba(255,107,53,0.35)", color: "#f5f5f5", backgroundColor: "rgba(255,107,53,0.04)" }}
               whileTap={btnTapAnim}
             >
               <FileText size={14} className="text-accent" aria-hidden="true" />
@@ -116,7 +116,7 @@ export default function HeroSection() {
             <motion.a
               href={hero.cta.tertiary.href}
               className="ml-auto text-accent font-medium flex items-center gap-1.5"
-              whileHover={{ color: "var(--accent-secondary)", x: 2 }}
+              whileHover={{ color: "#ff9f5a", x: 2 }}
               transition={{ duration: 0.18 }}
             >
               {hero.cta.tertiary.label}
