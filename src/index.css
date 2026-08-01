@@ -116,34 +116,47 @@
    ────────────────────────────────────────── */
 
 @layer components {
-  /* Lift card — subtle elevation on hover */
+  /* Lift card — elevation + scale on hover */
   .card-lift {
-    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-                box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-                border-color 0.3s ease;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.28s ease;
   }
   .card-lift:hover {
-    transform: translateY(-3px);
-    border-color: rgba(255, 107, 53, 0.18);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35),
-                0 0 0 1px rgba(255, 107, 53, 0.06);
+    transform: translateY(-4px) scale(1.012);
+    border-color: rgba(255, 107, 53, 0.2);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 107, 53, 0.07);
   }
 
-  /* Org card — clickable with brand glow on hover */
+  /* Button scale — for primary/secondary CTAs */
+  .btn-scale {
+    transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.2s ease,
+                background-color 0.2s ease;
+  }
+  .btn-scale:hover {
+    transform: scale(1.03);
+  }
+  .btn-scale:active {
+    transform: scale(0.97);
+  }
+
+  /* Org card — hover lift */
   .org-card-hover {
-    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-                box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-                border-color 0.3s ease;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.28s ease;
     cursor: pointer;
   }
   .org-card-hover:hover {
-    transform: translateY(-4px) scale(1.005);
+    transform: translateY(-3px) scale(1.008);
   }
 
   /* Tech pill — hover pop */
   .tech-pill {
-    transition: background 0.2s ease, border-color 0.2s ease,
-                color 0.2s ease, transform 0.15s ease;
+    transition: background 0.18s ease, border-color 0.18s ease,
+                color 0.18s ease, transform 0.15s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .tech-pill:hover {
     transform: translateY(-1px);
@@ -151,7 +164,7 @@
     color: #f5f5f5;
   }
 
-  /* Underline link animation */
+  /* Underline link sweep */
   .link-underline {
     position: relative;
     text-decoration: none;
@@ -173,6 +186,15 @@
     transform-origin: left;
   }
 
+  /* Active nav indicator */
+  .nav-link-active {
+    color: #f5f5f5 !important;
+  }
+  .nav-link-active::after {
+    transform: scaleX(1) !important;
+    transform-origin: left !important;
+  }
+
   /* Shimmer badge */
   .badge-shimmer {
     position: relative;
@@ -189,22 +211,10 @@
       transparent 60%
     );
     background-size: 200% 100%;
-    animation: shimmer 3s infinite;
+    animation: shimmer 3.5s infinite;
   }
   @keyframes shimmer {
     0%   { background-position: 200% 0; }
     100% { background-position: -200% 0; }
-  }
-
-  /* Section fade-in from bottom — for scroll reveal */
-  .section-enter {
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .section-enter.visible {
-    opacity: 1;
-    transform: none;
   }
 }
