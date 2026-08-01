@@ -17,8 +17,6 @@ export const navLinks = [
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
   { name: "Open Source", href: "#opensource" },
-  { name: "Case Studies", href: "#casestudies" },
-  { name: "Writing", href: "#writing" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -31,7 +29,7 @@ export const hero = {
   domains: ["AI", "Product Design", "Frontend Engineering", "Open Source", "Web3"],
   cta: {
     primary: { label: "View My Work", href: "#projects" },
-    secondary: { label: "Case Studies", href: "#casestudies" },
+    secondary: { label: "Open Source", href: "#opensource" },
     tertiary: { label: "Let's Talk", href: "#contact" },
   },
 };

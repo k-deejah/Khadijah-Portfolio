@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Globe, Download, ArrowUpRight, BookOpen } from "lucide-react";
+import { MapPin, Globe, Download, ArrowUpRight, Github } from "lucide-react";
 import { hero, personal } from "../data/portfolio.js";
 import { fadeInUp, staggerContainer } from "../lib/animations.js";
 
@@ -101,7 +101,7 @@ export default function HeroSection() {
               href={hero.cta.secondary.href}
               className="inline-flex items-center gap-2 border border-borderSubtle hover:border-[rgba(255,107,53,0.4)] text-textPrimary px-7 py-3.5 rounded-full font-medium text-sm transition-all duration-300 hover:bg-[rgba(255,107,53,0.05)]"
             >
-              <BookOpen size={16} className="text-accent" aria-hidden="true" />
+              <Github size={16} className="text-accent" aria-hidden="true" />
               {hero.cta.secondary.label}
             </a>
             <a

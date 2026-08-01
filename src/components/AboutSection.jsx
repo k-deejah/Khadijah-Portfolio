@@ -5,14 +5,6 @@ import { Brain, Palette, Code2, Hexagon, Terminal } from "lucide-react";
 
 const whatIDoIcons = [Brain, Palette, Code2, Hexagon, Terminal];
 
-const techCategories = [
-  { label: "Design", key: "design", color: "text-accent" },
-  { label: "Frontend", key: "frontend", color: "text-accentSecondary" },
-  { label: "AI", key: "ai", color: "text-accent" },
-  { label: "Web3", key: "web3", color: "text-accentSecondary" },
-  { label: "Tools", key: "tools", color: "text-accent" },
-];
-
 export default function AboutSection() {
   return (
     <section id="about" className="py-24 lg:py-32 bg-surface" aria-labelledby="about-heading">
@@ -27,8 +19,8 @@ export default function AboutSection() {
             ABOUT
           </motion.span>
 
-          {/* ── Top: headline + narrative ── */}
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 mb-16">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+            {/* ── Left: narrative ── */}
             <motion.div variants={fadeInUp} custom={0}>
               <h2
                 id="about-heading"
@@ -45,8 +37,9 @@ export default function AboutSection() {
               </div>
             </motion.div>
 
+            {/* ── Right: stats + what I do ── */}
             <motion.div variants={fadeInUp} custom={1} className="lg:pt-4 space-y-6">
-              {/* Stats grid */}
+              {/* Stats */}
               <div className="grid grid-cols-2 gap-4">
                 {about.stats.map((stat) => (
                   <div
@@ -65,7 +58,7 @@ export default function AboutSection() {
 
               {/* What I do */}
               <div className="bg-primary border border-borderSubtle rounded-2xl p-6 lg:p-8 card-lift">
-                <h3 className="text-base font-semibold text-textPrimary mb-4 font-mono uppercase tracking-wider text-accent">
+                <h3 className="text-xs font-mono font-semibold text-accent uppercase tracking-widest mb-4">
                   What I Do
                 </h3>
                 <div className="space-y-3">
@@ -74,7 +67,7 @@ export default function AboutSection() {
                     return (
                       <div key={item.label} className="flex items-center gap-3 text-textMuted">
                         <Icon
-                          size={16}
+                          size={15}
                           className={item.accent ? "text-accent" : "text-accentSecondary"}
                           aria-hidden="true"
                         />
@@ -86,55 +79,6 @@ export default function AboutSection() {
               </div>
             </motion.div>
           </div>
-
-          {/* ── Tech Stack ── */}
-          <motion.div
-            variants={fadeInUp}
-            custom={2}
-            className="bg-primary border border-borderSubtle rounded-2xl p-6 lg:p-10"
-          >
-            <h3 className="text-base font-semibold text-textPrimary mb-8 font-mono uppercase tracking-wider text-accent">
-              Tech Stack
-            </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {techCategories.map(({ label, key, color }) => (
-                <div key={key}>
-                  <p className={`text-xs font-mono font-semibold uppercase tracking-widest mb-3 ${color}`}>
-                    {label}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {about.techStack[key].map((tech) => (
-                      <span
-                        key={tech}
-                        className="tech-pill text-xs text-textMuted bg-surfaceElevated px-2.5 py-1 rounded-lg border border-borderSubtle"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* ── Philosophy ── */}
-          <motion.div
-            variants={fadeInUp}
-            custom={3}
-            className="mt-6 bg-gradient-to-r from-[rgba(255,107,53,0.06)] to-transparent border border-[rgba(255,107,53,0.12)] rounded-2xl p-6 lg:p-8"
-          >
-            <div className="flex items-start gap-4">
-              <div className="w-1 self-stretch rounded-full bg-gradient-to-b from-accent to-accentSecondary shrink-0" aria-hidden="true" />
-              <div>
-                <p className="text-xs font-mono font-semibold uppercase tracking-widest text-accent mb-3">
-                  Philosophy
-                </p>
-                <p className="text-textMuted leading-relaxed text-lg">
-                  {about.philosophy}
-                </p>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
