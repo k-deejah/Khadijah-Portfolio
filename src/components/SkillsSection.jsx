@@ -55,7 +55,7 @@ export default function SkillsSection() {
                     {category.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="text-[11px] text-textMuted bg-surfaceElevated px-2.5 py-0.5 rounded-lg border border-borderSubtle hover:border-[rgba(255,107,53,0.25)] hover:text-textPrimary transition-all duration-200"
+                        className="text-xs text-textMuted bg-surfaceElevated px-2.5 py-0.5 rounded-lg border border-borderSubtle hover:border-[rgba(255,107,53,0.25)] hover:text-textPrimary transition-all duration-200"
                       >
                         {skill}
                       </span>

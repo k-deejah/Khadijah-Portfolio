@@ -3,6 +3,61 @@ import { MapPin, Globe, ArrowUpRight, Github, FileText } from "lucide-react";
 import { hero, personal } from "../data/portfolio.js";
 import { heroReveal, heroContainer, btnHoverAnim, btnTapAnim } from "../lib/animations.js";
 
+// Slowly-rotating crystal polygon — pure decorative accent
+function CrystalAccent() {
+  return (
+    <motion.div
+      className="absolute right-[-5%] top-[8%] w-[600px] h-[600px] pointer-events-none select-none"
+      animate={{ rotate: 360 }}
+      transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
+      aria-hidden="true"
+    >
+      <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <polygon
+          points="300,30 520,130 570,320 480,530 280,570 80,470 30,260 120,80"
+          stroke="rgba(255,107,53,0.07)"
+          strokeWidth="1"
+          fill="none"
+        />
+        <polygon
+          points="300,80 480,165 525,320 445,490 280,520 110,430 70,260 155,105"
+          stroke="rgba(255,159,90,0.04)"
+          strokeWidth="0.5"
+          fill="none"
+        />
+      </svg>
+    </motion.div>
+  );
+}
+
+// Frosted glass stat card — desktop only
+function GlassStatCard() {
+  const stats = [
+    { number: "6+", label: "Projects Shipped" },
+    { number: "4",  label: "Repos Maintained" },
+    { number: "2",  label: "OSS Orgs" },
+  ];
+
+  return (
+    <motion.div
+      className="hidden lg:block absolute right-[6%] top-1/2 -translate-y-1/2 z-10"
+      initial={{ opacity: 0, x: 30 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+      aria-label="Quick stats"
+    >
+      <div className="glass-card rounded-2xl px-7 py-6 w-[190px] space-y-5">
+        {stats.map(({ number, label }) => (
+          <div key={label}>
+            <div className="text-2xl font-bold text-gradient leading-none">{number}</div>
+            <div className="text-[11px] text-textMuted font-mono mt-1 leading-tight">{label}</div>
+          </div>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
 export default function HeroSection() {
   return (
     <section
@@ -20,6 +75,12 @@ export default function HeroSection() {
         style={{ background: "radial-gradient(circle, rgba(255,159,90,0.035) 0%, transparent 70%)" }}
         aria-hidden="true"
       />
+
+      {/* Crystal polygon accent */}
+      <CrystalAccent />
+
+      {/* Glass stat card */}
+      <GlassStatCard />
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full relative z-10 py-24">
         <motion.div variants={heroContainer} initial="hidden" animate="visible">
@@ -41,7 +102,7 @@ export default function HeroSection() {
             id="hero-headline"
             variants={heroReveal}
             custom={1}
-            className="text-[clamp(3.5rem,10vw,9rem)] font-bold leading-[0.95] tracking-[-0.04em] mb-9"
+            className="text-[clamp(3.2rem,9vw,8.5rem)] font-bold leading-[0.95] tracking-[-0.04em] mb-7"
             initial={{ opacity: 0, y: 32, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.75, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
@@ -51,13 +112,14 @@ export default function HeroSection() {
             <span className="text-gradient">Engineer</span>
           </motion.h1>
 
-          {/* Subheadline */}
+          {/* Value proposition subheadline */}
           <motion.p
             variants={heroReveal}
             custom={2}
-            className="text-xl lg:text-2xl text-textMuted leading-snug max-w-2xl mb-12"
+            className="text-lg lg:text-xl text-textMuted leading-relaxed max-w-xl mb-12"
           >
-            {hero.subheadline}
+            I bridge AI research and real users — designing and engineering products that are powerful
+            and actually easy to use. End-to-end, no handoff.
           </motion.p>
 
           {/* CTA group */}

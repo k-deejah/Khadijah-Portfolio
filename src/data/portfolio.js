@@ -16,6 +16,7 @@ export const personal = {
 export const navLinks = [
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
+  { name: "Experience", href: "#experience" },
   { name: "Open Source", href: "#opensource" },
   { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
@@ -79,8 +80,8 @@ export const process = {
 export const about = {
   title: "Design, AI, and engineering — end to end",
   narrative: [
-    "I'm Khadijah Abdulwasii — an AI Design Engineer based in Lagos. I design and build AI-powered products from research through to production code.",
-    "My stack: React, TypeScript, Next.js, Tailwind CSS for frontend. Rust and Soroban for Web3. I carry work from user research to shipped product — no handoff.",
+    "Early-stage AI teams need someone who can design the interface, write the frontend, and understand the model. That combination is rare. I do all three — from user research and Figma to production React code.",
+    "I'm Khadijah Abdulwasii, an AI Design Engineer based in Lagos. My stack: React, TypeScript, Next.js, Tailwind CSS for frontend. Rust and Soroban for Web3. I carry work from the first research session to a shipped product — no handoff needed.",
   ],
   stats: [
     { number: "6+", label: "Projects Shipped" },

@@ -30,11 +30,15 @@ export default function AboutSection() {
                 engineering — end to end
               </h2>
 
-              <div className="space-y-4 text-textMuted text-lg leading-relaxed">
+              <div className="space-y-4 text-textMuted text-base leading-relaxed">
                 {about.narrative.map((para, i) => (
                   <p key={i}>{para}</p>
                 ))}
               </div>
+
+              <blockquote className="mt-6 pl-4 border-l-2 border-accent text-textMuted italic text-base leading-relaxed">
+                "{about.philosophy}"
+              </blockquote>
             </motion.div>
 
             {/* ── Right: stats + what I do ── */}

@@ -70,9 +70,18 @@ export default function ContactSection() {
 
           <motion.p
             variants={fadeInUp}
-            className="text-base text-textMuted max-w-xl mb-12"
+            className="text-base text-textMuted max-w-xl mb-6"
           >
             Open to AI product roles, frontend engineering, and open-source collaboration. Remote-friendly.
+          </motion.p>
+
+          {/* Availability status */}
+          <motion.p
+            variants={fadeInUp}
+            className="inline-flex items-center gap-2 text-sm text-accent font-mono mb-10"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" aria-hidden="true" />
+            Available for opportunities · Remote · Lagos, Nigeria
           </motion.p>
 
           {/* Contact cards — 2×2 on mobile, 4 across on desktop */}

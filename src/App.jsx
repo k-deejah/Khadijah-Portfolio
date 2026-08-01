@@ -1,13 +1,18 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import Navbar from "./components/Navbar.jsx";
 import HeroSection from "./components/HeroSection.jsx";
-import AboutSection from "./components/AboutSection.jsx";
-import ProjectsSection from "./components/ProjectsSection.jsx";
-import OpenSourceSection from "./components/OpenSourceSection.jsx";
-import SkillsSection from "./components/SkillsSection.jsx";
-import ContactSection from "./components/ContactSection.jsx";
-import Footer from "./components/Footer.jsx";
+import ScrollProgressBar from "./components/ScrollProgressBar.jsx";
 import { useTheme } from "./lib/useTheme.js";
+
+// Below-fold sections — lazy loaded
+const AboutSection      = lazy(() => import("./components/AboutSection.jsx"));
+const ProcessSection    = lazy(() => import("./components/ProcessSection.jsx"));
+const ProjectsSection   = lazy(() => import("./components/ProjectsSection.jsx"));
+const ExperienceSection = lazy(() => import("./components/ExperienceSection.jsx"));
+const OpenSourceSection = lazy(() => import("./components/OpenSourceSection.jsx"));
+const SkillsSection     = lazy(() => import("./components/SkillsSection.jsx"));
+const ContactSection    = lazy(() => import("./components/ContactSection.jsx"));
+const Footer            = lazy(() => import("./components/Footer.jsx"));
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,18 +26,32 @@ function App() {
 
   return (
     <div className="min-h-screen bg-primary text-textPrimary font-sans antialiased">
+      {/* Scroll progress bar — fixed, top of viewport */}
+      <ScrollProgressBar />
+
       <Navbar scrolled={scrolled} theme={theme} onToggleTheme={toggle} />
+
       <main>
+        {/* Hero — eager, above fold */}
         <section id="home" aria-label="Hero">
           <HeroSection />
         </section>
-        <AboutSection />
-        <ProjectsSection />
-        <OpenSourceSection />
-        <SkillsSection />
-        <ContactSection />
+
+        {/* All below-fold sections — lazy loaded */}
+        <Suspense fallback={null}>
+          <AboutSection />
+          <ProcessSection />
+          <ProjectsSection />
+          <ExperienceSection />
+          <OpenSourceSection />
+          <SkillsSection />
+          <ContactSection />
+        </Suspense>
       </main>
-      <Footer />
+
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

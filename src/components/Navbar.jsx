@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { navLinks } from "../data/portfolio.js";
@@ -138,16 +138,18 @@ function MobileNav({ theme, onToggleTheme }) {
       </motion.button>
 
       {open && (
-        <motion.div
-          id="mobile-nav"
-          role="dialog"
-          aria-label="Mobile navigation"
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute top-full left-0 right-0 bg-surface/95 backdrop-blur-xl border-b border-borderSubtle py-6 z-40"
-        >
+        <AnimatePresence>
+          <motion.div
+            key="mobile-menu"
+            id="mobile-nav"
+            role="dialog"
+            aria-label="Mobile navigation"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute top-full left-0 right-0 bg-surface/95 backdrop-blur-xl border-b border-borderSubtle py-6 z-40"
+          >
           <nav className="flex flex-col gap-1 px-6">
             {navLinks.map((link, i) => (
               <motion.a
@@ -176,6 +178,7 @@ function MobileNav({ theme, onToggleTheme }) {
             </motion.a>
           </nav>
         </motion.div>
+        </AnimatePresence>
       )}
     </div>
   );
