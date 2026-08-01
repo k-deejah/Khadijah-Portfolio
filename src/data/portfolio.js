@@ -24,7 +24,7 @@ export const navLinks = [
 export const hero = {
   headline: "AI Design Engineer",
   subheadline:
-    "I design and build AI-powered products — combining product design, frontend engineering, and AI integration into experiences people actually want to use.",
+    "Design, AI, and frontend engineering — building products that are powerful and easy to use.",
   label: "Available for opportunities",
   domains: ["AI", "Product Design", "Frontend Engineering", "Open Source", "Web3"],
   cta: {
@@ -79,8 +79,7 @@ export const about = {
   title: "Design, AI, and engineering — end to end",
   narrative: [
     "I'm Khadijah Abdulwasii — an AI Design Engineer based in Lagos. I design and build AI-powered products from research through to production code.",
-    "On the engineering side: React, TypeScript, Next.js, Tailwind CSS for frontend. Rust and Soroban for Web3. I contribute to open-source projects in JavaScript, TypeScript, and Rust.",
-    "My edge is the full stack — design thinking in code reviews, engineering constraints in design decisions. I carry work from user research to shipped product without handing off.",
+    "My stack: React, TypeScript, Next.js, Tailwind CSS for frontend. Rust and Soroban for Web3. I carry work from user research to shipped product — no handoff.",
   ],
   stats: [
     { number: "6+", label: "Projects Shipped" },
