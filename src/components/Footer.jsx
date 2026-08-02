@@ -39,9 +39,6 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Divider */}
-          <div className="border-t border-borderSubtle mb-8" />
-
           {/* Row 2 — Social icons + copyright */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Social icons */}

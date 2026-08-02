@@ -150,11 +150,11 @@ function OrgCard({ org, index }) {
         aria-hidden="true"
       />
 
-      {/* Logo banner — shows real logo if available, fallback to name */}
-      <div className="relative h-[80px] bg-surfaceElevated overflow-hidden">
+      {/* Logo banner */}
+      <div className="relative h-[100px] bg-[#0d0d0d] overflow-hidden rounded-t-2xl">
         {org.logo ? (
           <img
-            src={`${import.meta.env.BASE_URL}${org.logo.replace(/^\//, "")}`}
+            src={`${import.meta.env.BASE_URL}${encodeURIComponent(org.logo.replace(/^\//, "")).replace(/%2F/g, "/")}`}
             alt={org.name}
             className="w-full h-full object-cover object-center"
             loading="lazy"
@@ -164,12 +164,6 @@ function OrgCard({ org, index }) {
             <span className="text-lg font-bold text-textMuted">{org.name}</span>
           </div>
         )}
-        {/* Fade overlay for smooth blending */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-6 pointer-events-none"
-          style={{ background: "linear-gradient(to bottom, transparent, var(--surface-elevated))" }}
-          aria-hidden="true"
-        />
       </div>
 
       <div className="px-5 pb-5 flex flex-col gap-3">

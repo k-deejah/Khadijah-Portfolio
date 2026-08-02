@@ -82,7 +82,7 @@ function ProjectCard({ project, isExpanded, onToggleExpand }) {
               <span className="w-2.5 h-2.5 rounded-full bg-[rgba(255,255,255,0.15)]" />
             </div>
             <motion.img
-              src={`${import.meta.env.BASE_URL}${project.screenshot.replace(/^\//, "")}`}
+              src={`${import.meta.env.BASE_URL}${encodeURIComponent(project.screenshot.replace(/^\//, "")).replace(/%2F/g, "/")}`}
               alt={`${project.title} screenshot`}
               className="absolute inset-0 w-full h-full object-cover object-top"
               style={{ paddingTop: "24px" }}
