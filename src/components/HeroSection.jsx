@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Globe, ArrowUpRight, Github, FileText } from "lucide-react";
 import { hero, personal } from "../data/portfolio.js";
+import { resumeUrl } from "../data/portfolio.js";
 import { heroReveal, heroContainer, btnHoverAnim, btnTapAnim } from "../lib/animations.js";
 
 // Slowly-rotating crystal polygon — decorative accent
@@ -30,58 +31,62 @@ function CrystalAccent() {
   );
 }
 
-// Frosted glass stat card + portrait illustration — desktop only
+// Portrait + stats — visible on md+ screens
 function HeroVisual() {
   const stats = [
-    { number: "6+", label: "Projects Shipped"  },
-    { number: "4",  label: "Repos Maintained"  },
-    { number: "2",  label: "OSS Orgs"          },
+    { number: "6+", label: "Projects Shipped" },
+    { number: "3",  label: "OSS Repos"        },
+    { number: "2",  label: "OSS Orgs"         },
   ];
 
   return (
     <motion.div
-      className="hidden lg:flex flex-col items-center gap-6 absolute right-[4%] top-1/2 -translate-y-1/2 z-10"
+      className="hidden md:flex flex-col items-center gap-4
+                 md:absolute md:right-4 md:top-1/2 md:-translate-y-1/2
+                 lg:right-[4%]
+                 xl:right-[6%]
+                 z-10"
       initial={{ opacity: 0, x: 30 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.75, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
       aria-label="Khadijah Abdulwasii"
     >
-      {/* Portrait illustration */}
-      <div className="relative w-[220px]">
-        {/* Accent glow ring behind image */}
+      {/* Portrait */}
+      <div className="relative
+                      w-[160px] md:w-[180px] lg:w-[210px] xl:w-[230px]
+                      shrink-0">
+        {/* Glow ring */}
         <div
           className="absolute inset-0 rounded-2xl pointer-events-none"
-          style={{
-            boxShadow: "0 0 60px rgba(255,107,53,0.18), 0 0 0 1px rgba(255,107,53,0.12)",
-            borderRadius: "1rem",
-          }}
+          style={{ boxShadow: "0 0 50px rgba(255,107,53,0.16), 0 0 0 1px rgba(255,107,53,0.1)" }}
           aria-hidden="true"
         />
         <motion.img
           src={`${import.meta.env.BASE_URL}illustration.png`}
           alt="Khadijah Abdulwasii — AI Design Engineer"
-          className="w-full rounded-2xl relative z-10"
+          className="w-full h-auto rounded-2xl block relative z-10 object-cover"
           style={{ filter: "contrast(1.04) brightness(0.97)" }}
           whileHover={{ scale: 1.015 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         />
-        {/* Subtle orange tint overlay — ties portrait to brand palette */}
+        {/* Brand tint overlay */}
         <div
           className="absolute inset-0 rounded-2xl pointer-events-none z-20"
-          style={{
-            background: "linear-gradient(135deg, rgba(255,107,53,0.06) 0%, transparent 60%)",
-          }}
+          style={{ background: "linear-gradient(135deg, rgba(255,107,53,0.06) 0%, transparent 60%)" }}
           aria-hidden="true"
         />
       </div>
 
-      {/* Glass stat card */}
-      <div className="glass-card rounded-2xl px-6 py-5 w-[220px]">
-        <div className="flex items-center justify-between">
+      {/* Stats strip */}
+      <div className="glass-card rounded-xl px-4 py-3 w-full">
+        <div className="flex items-center justify-between gap-2">
           {stats.map(({ number, label }, i) => (
-            <div key={label} className={`text-center ${i > 0 ? "border-l border-borderSubtle pl-4" : ""}`}>
-              <div className="text-xl font-bold text-gradient leading-none">{number}</div>
-              <div className="text-[10px] text-textMuted font-mono mt-1 leading-tight">{label}</div>
+            <div
+              key={label}
+              className={`text-center flex-1 ${i > 0 ? "border-l border-borderSubtle pl-2" : ""}`}
+            >
+              <div className="text-base lg:text-lg font-bold text-gradient leading-none">{number}</div>
+              <div className="text-[9px] text-textMuted font-mono mt-0.5 leading-tight whitespace-nowrap">{label}</div>
             </div>
           ))}
         </div>
@@ -111,9 +116,14 @@ export default function HeroSection() {
       <CrystalAccent />
       <HeroVisual />
 
+      {/* Content column — full width on mobile, constrained on md+ to leave room for portrait */}
       <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full relative z-10 py-24">
-        <motion.div variants={heroContainer} initial="hidden" animate="visible" className="lg:max-w-[55%]">
-
+        <motion.div
+          variants={heroContainer}
+          initial="hidden"
+          animate="visible"
+          className="w-full md:max-w-[52%] lg:max-w-[55%]"
+        >
           {/* Availability badge */}
           <motion.div variants={heroReveal} custom={0} className="mb-8">
             <motion.span
@@ -131,7 +141,7 @@ export default function HeroSection() {
             id="hero-headline"
             variants={heroReveal}
             custom={1}
-            className="text-[clamp(3.2rem,9vw,8.5rem)] font-bold leading-[0.95] tracking-[-0.04em] mb-7"
+            className="text-[clamp(2.8rem,8vw,8rem)] font-bold leading-[0.95] tracking-[-0.04em] mb-7"
             initial={{ opacity: 0, y: 32, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.75, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
@@ -141,11 +151,11 @@ export default function HeroSection() {
             <span className="text-gradient">Engineer</span>
           </motion.h1>
 
-          {/* Value proposition subheadline */}
+          {/* Value proposition */}
           <motion.p
             variants={heroReveal}
             custom={2}
-            className="text-lg lg:text-xl text-textMuted leading-relaxed max-w-xl mb-10"
+            className="text-base lg:text-xl text-textMuted leading-relaxed max-w-lg mb-10"
           >
             {hero.subheadline}
           </motion.p>
@@ -158,7 +168,7 @@ export default function HeroSection() {
           >
             <motion.a
               href={hero.cta.primary.href}
-              className="inline-flex items-center gap-2 bg-accent text-white px-8 py-3.5 rounded-full font-medium text-sm shadow-[0_0_28px_rgba(255,107,53,0.28)] btn-scale"
+              className="inline-flex items-center gap-2 bg-accent text-white px-7 py-3.5 rounded-full font-medium text-sm shadow-[0_0_28px_rgba(255,107,53,0.28)] btn-scale"
               whileHover={{ ...btnHoverAnim, backgroundColor: "#ff9f5a", boxShadow: "0 0 40px rgba(255,107,53,0.42)" }}
               whileTap={btnTapAnim}
             >
@@ -168,7 +178,7 @@ export default function HeroSection() {
 
             <motion.a
               href={hero.cta.secondary.href}
-              className="inline-flex items-center gap-2 border border-borderSubtle text-textPrimary px-8 py-3.5 rounded-full font-medium text-sm btn-scale"
+              className="inline-flex items-center gap-2 border border-borderSubtle text-textPrimary px-7 py-3.5 rounded-full font-medium text-sm btn-scale"
               whileHover={{ ...btnHoverAnim, borderColor: "rgba(255,107,53,0.35)", backgroundColor: "rgba(255,107,53,0.04)" }}
               whileTap={btnTapAnim}
             >
@@ -177,7 +187,7 @@ export default function HeroSection() {
             </motion.a>
 
             <motion.a
-              href={`${import.meta.env.BASE_URL}resume.pdf`}
+              href={resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-borderSubtle text-textMuted px-6 py-3.5 rounded-full font-medium text-sm btn-scale"
@@ -196,7 +206,7 @@ export default function HeroSection() {
             className="flex flex-wrap items-center gap-2 mb-12"
             aria-label="Areas of expertise"
           >
-            {hero.credibilityStrip.map((item, i) => (
+            {hero.credibilityStrip.map((item) => (
               <span
                 key={item}
                 className="inline-flex items-center gap-1.5 text-[11px] font-mono text-textMuted px-3 py-1 rounded-full border border-borderSubtle bg-surfaceElevated"

@@ -3,6 +3,8 @@ import { Mail, Github, Linkedin, Twitter, Download, ArrowUpRight } from "lucide-
 import { fadeInUp, staggerContainer } from "../lib/animations.js";
 import { personal } from "../data/portfolio.js";
 
+import { resumeUrl } from "../data/portfolio.js";
+
 const links = [
   {
     label: "Email",
@@ -28,7 +30,7 @@ const links = [
   {
     label: "X (Twitter)",
     value: "@Crypt_deejah",
-    href: "https://twitter.com/Crypt_deejah",
+    href: "https://x.com/Crypt_deejah",
     icon: Twitter,
     description: "Follow on X",
   },
@@ -119,10 +121,10 @@ export default function ContactSection() {
             ))}
           </motion.div>
 
-          {/* Resume button — coming soon placeholder */}
+          {/* Resume button */}
           <motion.div variants={fadeInUp}>
             <a
-              href={`${import.meta.env.BASE_URL}resume.pdf`}
+              href={resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary border border-borderSubtle hover:border-[rgba(255,107,53,0.35)] text-textPrimary px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 hover:bg-[rgba(255,107,53,0.04)] hover:shadow-[0_0_20px_rgba(255,107,53,0.09)]"
