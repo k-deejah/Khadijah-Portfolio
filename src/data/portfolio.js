@@ -100,16 +100,16 @@ export const about = {
 export const projects = [
   {
     title: "Dee Kitchen",
-    summary: "Modern food delivery platform with fast ordering and seamless UX.",
+    summary: "Food delivery platform with seamless browsing and fast checkout.",
     description:
-      "Dee Kitchen is a modern food delivery platform that allows users to browse restaurants, discover meals, place food orders quickly, and enjoy a seamless ordering experience. The platform includes promotional discounts, intuitive navigation, and a responsive interface focused on speed and convenience.",
+      "Dee Kitchen is a modern food delivery platform where users browse restaurants, discover meals, and order with a fast, seamless experience. Features promotional discounts and a mobile-first interface.",
     tags: ["PRODUCT", "MOBILE", "UX DESIGN"],
     problem:
-      "Food ordering platforms often suffer from slow navigation, confusing checkout flows, and a lack of visual hierarchy — making it hard for users to find what they want and complete orders quickly.",
+      "Food ordering platforms suffer from slow navigation and confusing checkout flows.",
     solution:
-      "Built a fast, visually driven food delivery interface with clear restaurant and menu browsing, streamlined checkout, and promotional discount surfaces that guide users to completion.",
-    role: "Lead Frontend Engineer & Product Designer — end-to-end design and implementation",
-    impact: "Delivered a production-ready food ordering experience with live deployment on Netlify.",
+      "Built a fast, visually driven interface with streamlined checkout and promotional surfaces.",
+    role: "Lead Frontend Engineer & Product Designer",
+    impact: "Production-ready food ordering platform, live on Netlify.",
     responsibilities: [
       "Designed the full product experience in Figma",
       "Implemented frontend with React and Tailwind CSS",
@@ -125,7 +125,7 @@ export const projects = [
       "Mobile-first responsive design",
       "Fast, intuitive ordering experience",
     ],
-    screenshot: null,
+    screenshot: "/projects/dee-kitchen.png",
     github: "https://github.com/k-deejah/Food-Delivery-App",
     live: "https://dee-kitchen.netlify.app/menu",
     liveStatus: "live",
@@ -135,16 +135,16 @@ export const projects = [
   },
   {
     title: "Escrow Marketplace",
-    summary: "Secure marketplace where escrow protects every buyer and seller transaction.",
+    summary: "Secure P2P marketplace where escrow protects every transaction.",
     description:
-      "Escrow Marketplace is a secure marketplace where buyers and sellers can trade gadgets, phones, fashion items, and other products using an escrow-protected payment system that safeguards both parties throughout the transaction.",
+      "A secure marketplace where buyers and sellers trade gadgets, phones, and fashion items with escrow-protected payments that safeguard both parties throughout every transaction.",
     tags: ["FINTECH", "WEB3", "PRODUCT"],
     problem:
-      "Peer-to-peer marketplaces lack a trust layer — buyers risk non-delivery and sellers risk chargebacks, with no neutral intermediary to protect both parties.",
+      "P2P marketplaces lack a trust layer — buyers risk non-delivery, sellers risk chargebacks.",
     solution:
-      "Built a marketplace where funds are held in escrow and released only when both parties confirm the transaction, with a clear status UI at every stage.",
-    role: "Lead Product Designer & Frontend Engineer — design through to implementation",
-    impact: "Shipped a live escrow-protected marketplace with real buyer and seller protection flows.",
+      "Funds held in escrow, released only when both parties confirm. Clear status UI at every stage.",
+    role: "Lead Product Designer & Frontend Engineer",
+    impact: "Live escrow-protected marketplace with real buyer and seller protection flows.",
     responsibilities: [
       "Designed end-to-end product and interaction flows",
       "Implemented frontend in React and TypeScript",
@@ -160,7 +160,7 @@ export const projects = [
       "Dispute resolution workflow",
       "Mobile-responsive interface",
     ],
-    screenshot: null,
+    screenshot: "/projects/escrow-marketplace.png",
     github: "https://github.com/k-deejah/Escrow-Marketplace",
     live: "https://escrowmarketplace.netlify.app",
     liveStatus: "live",
@@ -170,16 +170,16 @@ export const projects = [
   },
   {
     title: "Web3 NFT Platform",
-    summary: "NFT marketplace where creators mint, showcase, buy, and sell digital collectibles.",
+    summary: "NFT marketplace where creators mint, showcase, buy, and sell.",
     description:
-      "A modern Web3 NFT marketplace where creators can mint, showcase, buy, and sell digital collectibles, artwork, photography, and NFTs through an intuitive blockchain-powered experience.",
+      "A modern Web3 NFT marketplace where creators mint, showcase, buy, and sell digital collectibles, artwork, and photography through an intuitive blockchain-powered experience.",
     tags: ["WEB3", "NFT", "PRODUCT DESIGN"],
     problem:
-      "NFT platforms alienated mainstream users with confusing onboarding, opaque gas fees, and wallet-first experiences that left newcomers behind.",
+      "NFT platforms alienate mainstream users with confusing onboarding and wallet-first experiences.",
     solution:
-      "Designed a progressive-disclosure Web3 experience — approachable for newcomers, with full depth for experienced collectors managing multi-wallet portfolios.",
-    role: "Lead Product Designer — research, design system, and frontend prototype",
-    impact: "Delivered a live Web3 NFT platform accessible to both newcomers and experienced collectors.",
+      "Progressive-disclosure Web3 experience — approachable for newcomers, powerful for collectors.",
+    role: "Lead Product Designer",
+    impact: "Live Web3 NFT platform accessible to both newcomers and experienced collectors.",
     responsibilities: [
       "Designed the full product experience from research to prototype",
       "Built progressive-disclosure onboarding for non-Web3 users",
@@ -195,7 +195,7 @@ export const projects = [
       "Creator showcase and discovery",
       "Mobile-first responsive design",
     ],
-    screenshot: null,
+    screenshot: "/projects/web3-nft.png",
     github: "https://github.com/k-deejah/Web3-NFT-Platform",
     live: "https://web3nft-platform.netlify.app",
     liveStatus: "live",
@@ -205,16 +205,16 @@ export const projects = [
   },
   {
     title: "LineProof",
-    summary: "Open-source protocol for transparent, non-transferable waiting lists on Stellar.",
+    summary: "On-chain protocol for transparent, non-transferable waiting lists.",
     description:
-      "LineProof is an open-source protocol built on Stellar and Soroban that enables organizations to create transparent, auditable, and non-transferable waiting lists for oversubscribed resources.",
+      "An open-source protocol on Stellar and Soroban that enables organizations to create transparent, auditable, and non-transferable waiting lists for oversubscribed resources.",
     tags: ["WEB3", "OPEN SOURCE", "STELLAR"],
     problem:
-      "Oversubscribed resources — events, grants, early access products — lack transparent, auditable queue systems. Existing waitlists are opaque, manipulable, and non-verifiable.",
+      "Oversubscribed resources lack transparent, auditable queue systems. Existing waitlists are opaque and manipulable.",
     solution:
-      "Built a Soroban-powered on-chain waiting list protocol with non-transferable queue positions, transparent ordering, and full auditability for any oversubscribed resource.",
-    role: "Creator & Maintainer — protocol design, smart contracts, and documentation",
-    impact: "Open-source protocol enabling verifiable, fair, and transparent waiting lists on Stellar.",
+      "Soroban-powered on-chain waiting list with non-transferable positions and full auditability.",
+    role: "Creator & Maintainer",
+    impact: "Open-source protocol enabling verifiable, fair waiting lists on Stellar.",
     responsibilities: [
       "Designed and implemented the LineProof protocol architecture",
       "Wrote Soroban smart contracts for queue management",
@@ -240,28 +240,28 @@ export const projects = [
   },
   {
     title: "Sorokit",
-    summary: "Enterprise-grade TypeScript SDK and smart contract toolkit for Stellar Soroban.",
+    summary: "Enterprise TypeScript SDK and smart contract toolkit for Stellar Soroban.",
     description:
-      "Sorokit is an enterprise-grade toolkit for building applications on Stellar Soroban. It provides production-ready SDKs, reusable React UI components, and Rust smart contracts for developers building decentralized applications.",
+      "Enterprise-grade toolkit for Stellar Soroban — production-ready TypeScript SDK, React UI components, and Rust smart contracts for building decentralized applications.",
     tags: ["WEB3", "DEVELOPER TOOLS", "OPEN SOURCE"],
     problem:
-      "Building on Stellar Soroban requires juggling fragmented tooling, manual wallet integration, and writing boilerplate smart contracts from scratch — slowing down developers significantly.",
+      "Building on Soroban requires fragmented tooling, manual wallet integration, and boilerplate contracts.",
     solution:
-      "Built Sorokit — a monorepo of production-ready tools: a TypeScript SDK (sorokit-core), React UI components (sorokit-ui), and Rust smart contracts (sorokit-contracts) covering Escrow, Splitter, and Registry patterns.",
-    role: "Creator & Maintainer — architecture, SDK, UI components, and smart contracts",
-    impact: "Enterprise-grade toolkit actively used by Stellar developers. Multi-repo OSS organization on GitHub.",
+      "sorokit-core (TypeScript SDK), sorokit-ui (React components), and sorokit-contracts (Rust: Escrow, Splitter, Registry).",
+    role: "Creator & Maintainer",
+    impact: "Enterprise-grade toolkit used by Stellar developers. Multi-repo OSS organization.",
     responsibilities: [
-      "Architected the sorokit-core TypeScript SDK for wallet and contract interaction",
-      "Built sorokit-ui — production-ready React components for Stellar/Soroban",
-      "Wrote sorokit-contracts — Rust smart contracts including Escrow, Splitter, Registry",
-      "Designed the developer experience across all three repositories",
-      "Maintained the GitHub organization and reviewed community contributions",
+      "Architected the sorokit-core TypeScript SDK",
+      "Built sorokit-ui React components for Stellar/Soroban",
+      "Wrote sorokit-contracts Rust smart contracts",
+      "Designed developer experience across all three repositories",
+      "Maintained GitHub organization and reviewed contributions",
     ],
     tech: ["TypeScript", "React", "Rust", "Stellar", "Soroban"],
     notableFeatures: [
-      "sorokit-core — TypeScript SDK for wallet connection and contracts",
-      "sorokit-ui — Production-ready React components for Soroban",
-      "sorokit-contracts — Rust Escrow, Splitter, and Registry contracts",
+      "sorokit-core TypeScript SDK",
+      "sorokit-ui React components",
+      "sorokit-contracts Rust smart contracts",
       "Enterprise-grade developer tooling",
       "Full Stellar Soroban ecosystem coverage",
     ],
@@ -275,16 +275,16 @@ export const projects = [
   },
   {
     title: "Velo",
-    summary: "Open-source payment and liquidity platform for privacy-preserving cash access on Stellar.",
+    summary: "Privacy-preserving payment and liquidity platform on Stellar.",
     description:
-      "Velo is an open-source payment and liquidity platform built on Stellar that combines Soroban smart contracts, a lightweight API layer, and a mobile-first experience to enable secure payments, programmable escrow, agent-assisted transactions, and real-world digital commerce.",
+      "Open-source payment and liquidity platform on Stellar combining Soroban smart contracts, a lightweight API layer, and a mobile-first experience for programmable escrow and real-world commerce.",
     tags: ["WEB3", "PAYMENTS", "OPEN SOURCE"],
     problem:
-      "Privacy-preserving cash access on blockchain is fragmented, with no unified platform for agent-assisted payments, programmable escrow, and real-world digital commerce on Stellar.",
+      "No unified platform for privacy-preserving agent-assisted payments and programmable escrow on Stellar.",
     solution:
-      "Built Velo — a payment and liquidity platform combining Soroban smart contracts, a lightweight API layer, and a mobile-first interface for cash-like settlement in real-world use cases.",
-    role: "Maintainer — platform design, smart contracts, API layer, and mobile-first experience",
-    impact: "Open-source platform enabling privacy-preserving payments, programmable escrow, and local commerce on Stellar.",
+      "Soroban smart contracts + lightweight API + mobile-first UI for cash-like settlement.",
+    role: "Maintainer",
+    impact: "Open-source platform enabling privacy-preserving payments and local commerce on Stellar.",
     responsibilities: [
       "Maintained the Velo platform codebase and architecture",
       "Oversaw Soroban smart contract development and security",
@@ -382,24 +382,26 @@ export const openSource = {
       name: "Drips",
       context: "Decentralised streaming payments protocol",
       description:
-        "I contribute to the Drips Wave (Stellar) initiative — shipping frontend improvements, redesigning core flows, and improving accessibility and onboarding across the protocol interface.",
+        "Contributing frontend improvements, UX redesigns, and accessibility work to the Drips Wave (Stellar) initiative.",
       myRole: "Open Source Contributor",
       period: "May 2026 – Present",
       tech: ["TypeScript", "React", "Ethers.js", "Stellar"],
       profileUrl: "https://www.drips.network/wave/stellar",
       profileLabel: "View Project",
+      logo: "/logos/drips.png",
       color: "purple",
     },
     {
       name: "GrantFox",
       context: "Open-source grant discovery platform",
       description:
-        "I contribute as a maintainer and frontend engineer — reviewing PRs, shipping features, establishing design standards, and helping grow the contributor community.",
+        "Maintainer and frontend engineer — reviewing PRs, shipping features, establishing design standards, and growing the contributor community.",
       myRole: "Open Source Contributor & Maintainer",
       period: "July 2026 – Present",
       tech: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
       profileUrl: "https://maintainer.grantfox.xyz/profile/k-deejah",
       profileLabel: "View Profile",
+      logo: "/logos/grantfox.png",
       color: "amber",
     },
   ],

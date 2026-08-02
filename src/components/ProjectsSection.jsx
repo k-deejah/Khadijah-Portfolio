@@ -1,12 +1,13 @@
 import { useState, useRef, useEffect, useCallback } from "react";
-import { motion, AnimatePresence, useMotionValue, animate } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
-  Github, ExternalLink, ArrowUpRight,
+  Github, ExternalLink,
   Shield, Code2, Layers, Box, Hexagon,
   ChevronLeft, ChevronRight, ChevronDown,
 } from "lucide-react";
 import { projects } from "../data/portfolio.js";
 import { fadeInUp, staggerContainer } from "../lib/animations.js";
+import CrystalLayer from "./CrystalLayer.jsx";
 
 // ─── Accent theme map ────────────────────────────────────────────
 const accentTheme = {
@@ -70,16 +71,39 @@ function ProjectCard({ project, isExpanded, onToggleExpand }) {
                   transition-shadow duration-300 ${t.glow} h-full`}
       aria-labelledby={`proj-title-${project.title.replace(/\s+/g, "-")}`}
     >
-      {/* Gradient header tile */}
-      <div className={`h-[120px] bg-gradient-to-br ${t.gradient} shrink-0 relative`} aria-hidden="true">
-        {/* Screenshot placeholder — swap src when screenshots are ready */}
-        {project.screenshot && (
-          <img
-            src={project.screenshot}
-            alt={`${project.title} screenshot`}
-            className="absolute inset-0 w-full h-full object-cover rounded-t-2xl"
-            loading="lazy"
-          />
+      {/* Screenshot / browser mockup */}
+      <div className={`relative h-[160px] bg-gradient-to-br ${t.gradient} shrink-0 overflow-hidden`}>
+        {project.screenshot ? (
+          <>
+            {/* Browser chrome bar */}
+            <div className="absolute top-0 left-0 right-0 h-6 bg-[rgba(0,0,0,0.35)] backdrop-blur-sm flex items-center px-3 gap-1.5 z-10">
+              <span className="w-2.5 h-2.5 rounded-full bg-[rgba(255,255,255,0.15)]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[rgba(255,255,255,0.15)]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[rgba(255,255,255,0.15)]" />
+            </div>
+            <motion.img
+              src={`${import.meta.env.BASE_URL}${project.screenshot.replace(/^\//, "")}`}
+              alt={`${project.title} screenshot`}
+              className="absolute inset-0 w-full h-full object-cover object-top"
+              style={{ paddingTop: "24px" }}
+              loading="lazy"
+              whileHover={{ scale: 1.04 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            />
+            {/* Bottom fade so screenshot blends into card */}
+            <div
+              className="absolute bottom-0 left-0 right-0 h-8 pointer-events-none z-10"
+              style={{ background: "linear-gradient(to bottom, transparent, var(--surface))" }}
+              aria-hidden="true"
+            />
+          </>
+        ) : (
+          /* Placeholder when no screenshot yet */
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${t.iconBg} opacity-40`}>
+              <Icon size={18} className={t.iconText} aria-hidden="true" />
+            </div>
+          </div>
         )}
       </div>
 
@@ -269,7 +293,8 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="py-24 lg:py-32" aria-labelledby="projects-heading">
+    <section id="projects" className="relative py-24 lg:py-32 overflow-hidden" aria-labelledby="projects-heading">
+      <CrystalLayer variant="subtle" flip />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Header */}
@@ -345,8 +370,6 @@ export default function ProjectsSection() {
               {[0, 1, 2].map((offset) => {
                 const idx = (current + offset) % count;
                 const project = projects[idx];
-                const showOnSm = offset < 2;   // sm: show 2 cards
-                const showOnLg = offset < 3;   // lg: show 3 cards
                 return (
                   <div
                     key={`${project.title}-${offset}`}

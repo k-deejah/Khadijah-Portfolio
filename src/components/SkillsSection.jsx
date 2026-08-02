@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { skills } from "../data/portfolio.js";
 import { fadeInUp, staggerContainer } from "../lib/animations.js";
 import { Brain, Palette, Monitor, Wrench, Hexagon, Code2 } from "lucide-react";
+import CrystalLayer from "./CrystalLayer.jsx";
 
 const iconMap = {
   "AI":               Brain,
@@ -13,7 +14,8 @@ const iconMap = {
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-24 lg:py-32" aria-labelledby="skills-heading">
+    <section id="skills" className="relative py-24 lg:py-32 overflow-hidden" aria-labelledby="skills-heading">
+      <CrystalLayer variant="mid" flip />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial="hidden"

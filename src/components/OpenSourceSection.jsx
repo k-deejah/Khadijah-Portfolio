@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Github, ArrowUpRight, BadgeCheck, Star } from "lucide-react";
+import { Github, ArrowUpRight, BadgeCheck } from "lucide-react";
 import { openSource } from "../data/portfolio.js";
 import { fadeInUp, staggerContainer } from "../lib/animations.js";
+import CrystalLayer from "./CrystalLayer.jsx";
 
 const colorMap = {
   amber: {
@@ -139,8 +140,8 @@ function OrgCard({ org, index }) {
       rel="noopener noreferrer"
       variants={fadeInUp}
       custom={index}
-      className={`group relative flex flex-col gap-3 bg-surface border border-borderSubtle
-                  rounded-2xl p-5 card-lift transition-all duration-300 overflow-hidden ${c.glow}`}
+      className={`group relative flex flex-col gap-4 bg-surface border border-borderSubtle
+                  rounded-2xl overflow-hidden card-lift transition-all duration-300 ${c.glow}`}
       aria-label={`${org.name} — ${org.context}`}
     >
       <div
@@ -149,41 +150,66 @@ function OrgCard({ org, index }) {
         aria-hidden="true"
       />
 
-      <div className="flex items-start justify-between">
-        <div>
-          <p className="text-sm font-semibold text-textPrimary">{org.name}</p>
-          <p className={`text-xs mt-0.5 ${c.iconText}`}>{org.context}</p>
-        </div>
-        <ArrowUpRight
-          size={14}
-          className="text-textMuted opacity-0 group-hover:opacity-100 group-hover:text-accent transition-all duration-300"
+      {/* Logo banner — shows real logo if available, fallback to name */}
+      <div className="relative h-[80px] bg-surfaceElevated overflow-hidden">
+        {org.logo ? (
+          <img
+            src={`${import.meta.env.BASE_URL}${org.logo.replace(/^\//, "")}`}
+            alt={org.name}
+            className="w-full h-full object-cover object-center"
+            loading="lazy"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-lg font-bold text-textMuted">{org.name}</span>
+          </div>
+        )}
+        {/* Fade overlay for smooth blending */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-6 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, transparent, var(--surface-elevated))" }}
           aria-hidden="true"
         />
       </div>
 
-      <span className={`self-start inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full border ${c.badge}`}>
-        <BadgeCheck size={9} aria-hidden="true" />
-        {org.myRole}
-      </span>
+      <div className="px-5 pb-5 flex flex-col gap-3">
+        <div className="flex items-start justify-between">
+          <div>
+            <p className="text-sm font-semibold text-textPrimary">{org.name}</p>
+            <p className={`text-xs mt-0.5 ${c.iconText}`}>{org.context}</p>
+          </div>
+          <ArrowUpRight
+            size={14}
+            className="text-textMuted opacity-0 group-hover:opacity-100 group-hover:text-accent transition-all duration-300 shrink-0"
+            aria-hidden="true"
+          />
+        </div>
 
-      <p className="text-xs text-textMuted leading-relaxed">{org.description}</p>
+        <span className={`self-start inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full border ${c.badge}`}>
+          <BadgeCheck size={9} aria-hidden="true" />
+          {org.myRole}
+        </span>
 
-      <div className="flex flex-wrap gap-1">
-        {org.tech.slice(0, 4).map((t) => (
-          <span key={t} className="text-[10px] text-textMuted bg-surfaceElevated px-2 py-0.5 rounded border border-borderSubtle">
-            {t}
-          </span>
-        ))}
+        <p className="text-xs text-textMuted leading-relaxed">{org.description}</p>
+
+        <div className="flex flex-wrap gap-1">
+          {org.tech.slice(0, 4).map((t) => (
+            <span key={t} className="text-[10px] text-textMuted bg-surfaceElevated px-2 py-0.5 rounded border border-borderSubtle">
+              {t}
+            </span>
+          ))}
+        </div>
+
+        <span className="text-[10px] text-textMuted font-mono">{org.period}</span>
       </div>
-
-      <span className="text-[10px] text-textMuted font-mono">{org.period}</span>
     </motion.a>
   );
 }
 
 export default function OpenSourceSection() {
   return (
-    <section id="opensource" className="py-24 lg:py-32 bg-surface" aria-labelledby="os-heading">
+    <section id="opensource" className="relative py-24 lg:py-32 bg-surface overflow-hidden" aria-labelledby="os-heading">
+      <CrystalLayer variant="subtle" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial="hidden"

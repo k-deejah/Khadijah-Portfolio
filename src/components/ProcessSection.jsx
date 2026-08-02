@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { process } from "../data/portfolio.js";
 import { fadeInUp, staggerContainer } from "../lib/animations.js";
+import CrystalLayer from "./CrystalLayer.jsx";
 
 function StepCard({ step, index }) {
   return (
@@ -29,7 +30,8 @@ function StepCard({ step, index }) {
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="py-24 lg:py-32" aria-labelledby="process-heading">
+    <section id="process" className="relative py-24 lg:py-32 overflow-hidden" aria-labelledby="process-heading">
+      <CrystalLayer variant="mid" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial="hidden"

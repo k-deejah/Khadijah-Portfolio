@@ -2,12 +2,14 @@ import { motion } from "framer-motion";
 import { about } from "../data/portfolio.js";
 import { fadeInUp, staggerContainer } from "../lib/animations.js";
 import { Brain, Palette, Code2, Hexagon, Terminal } from "lucide-react";
+import CrystalLayer from "./CrystalLayer.jsx";
 
 const whatIDoIcons = [Brain, Palette, Code2, Hexagon, Terminal];
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-surface" aria-labelledby="about-heading">
+    <section id="about" className="relative py-24 lg:py-32 bg-surface overflow-hidden" aria-labelledby="about-heading">
+      <CrystalLayer variant="subtle" flip />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial="hidden"

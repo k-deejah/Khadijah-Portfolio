@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, Twitter, Download, ArrowUpRight } from "lucide-react";
 import { fadeInUp, staggerContainer } from "../lib/animations.js";
-import { personal } from "../data/portfolio.js";
-
-import { resumeUrl } from "../data/portfolio.js";
+import { personal, resumeUrl } from "../data/portfolio.js";
+import CrystalLayer from "./CrystalLayer.jsx";
 
 const links = [
   {
@@ -40,9 +39,10 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-20 lg:py-28 bg-surface relative overflow-hidden"
+      className="relative py-20 lg:py-28 bg-surface overflow-hidden"
       aria-labelledby="contact-heading"
     >
+      <CrystalLayer variant="subtle" flip />
       {/* Ambient glow */}
       <div
         className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"

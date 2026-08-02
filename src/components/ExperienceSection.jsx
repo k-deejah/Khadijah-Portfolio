@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { experience } from "../data/portfolio.js";
 import { fadeInUp, staggerContainer } from "../lib/animations.js";
+import CrystalLayer from "./CrystalLayer.jsx";
 
 function TimelineEntry({ entry, index }) {
   return (
@@ -64,7 +65,8 @@ function TimelineEntry({ entry, index }) {
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-24 lg:py-32 bg-surface" aria-labelledby="experience-heading">
+    <section id="experience" className="relative py-24 lg:py-32 bg-surface overflow-hidden" aria-labelledby="experience-heading">
+      <CrystalLayer variant="mid" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial="hidden"
