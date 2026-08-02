@@ -38,11 +38,11 @@ export const hero = {
     tertiary:  { label: "Download Resume",     href: null          },
   },
   credibilityStrip: [
+    "AI Design Engineer",
+    "Frontend Engineer",
     "Open Source Maintainer",
-    "React & TypeScript",
-    "AI Product Design",
-    "Web3",
-    "Product Engineering",
+    "Open Source Advocate",
+    "React · TypeScript · AI · Web3",
   ],
 };
 
@@ -73,8 +73,8 @@ export const process = {
 export const about = {
   title: "Design, AI, and engineering — end to end",
   narrative: [
-    "Early-stage AI teams need someone who can design the interface, write the frontend, and understand the model. That combination is rare. I do all three — from user research and Figma to production React code.",
-    "I'm Khadijah Abdulwasii, an AI Design Engineer based in Lagos. My stack: React, TypeScript, Next.js, Tailwind CSS for frontend. Rust and Soroban for Web3. I carry work from the first research session to a shipped product — no handoff needed.",
+    "I design, engineer, and ship AI-powered products end-to-end. No handoff, no gap between design and code.",
+    "Stack: React, TypeScript, Next.js, Tailwind CSS. Web3: Rust, Soroban, Stellar. I take products from zero to production.",
   ],
   stats: [
     { number: "6+",  label: "Projects Shipped"    },
@@ -89,8 +89,7 @@ export const about = {
     { label: "Web3 & Decentralized Systems"                       },
     { label: "Open Source Maintainership"                         },
   ],
-  philosophy:
-    "I bring design thinking into engineering decisions and engineering constraints into design decisions — which produces better outcomes for real users.",
+  philosophy: "Design thinking in engineering decisions. Engineering constraints in design decisions. Products that actually work for real users.",
 };
 
 // ─── PROJECTS ─────────────────────────────────────────────────────
@@ -312,8 +311,7 @@ export const projects = [
 
 // ─── OPEN SOURCE ──────────────────────────────────────────────────
 export const openSource = {
-  tagline:
-    "I build and maintain open-source tools that solve real problems for developers building on Stellar, Soroban, and the Web3 ecosystem.",
+  tagline: "Real code, real feedback, real stakes. I build tools that solve problems for developers on Stellar, Soroban, and Web3.",
 
   // The 3 projects I created and actively maintain
   maintainedProjects: [
@@ -323,7 +321,7 @@ export const openSource = {
       myRole: "Creator & Maintainer",
       roleBadge: "Creator & Maintainer",
       description:
-        "Sorokit is an enterprise-grade TypeScript SDK and smart contract toolkit for the Stellar Soroban ecosystem. It provides production-ready developer tools including wallet integration, transaction handling, reusable React UI components, and Soroban smart contracts for building Web3 applications.",
+        "Production-ready TypeScript SDK, React UI components, and Rust smart contracts for building on Stellar Soroban. Covers wallet integration, transactions, and Escrow/Splitter/Registry contract patterns.",
       highlights: [
         "Enterprise Developer Tooling",
         "TypeScript SDK",
@@ -342,7 +340,7 @@ export const openSource = {
       myRole: "Creator & Maintainer",
       roleBadge: "Creator & Maintainer",
       description:
-        "LineProof is an open-source protocol built on Stellar and Soroban that enables organizations to create transparent, auditable, and non-transferable waiting lists for oversubscribed resources.",
+        "Open-source Soroban protocol for transparent, auditable, non-transferable waiting lists. Lets organizations manage oversubscribed resources with on-chain fairness guarantees.",
       highlights: [
         "Web3 Infrastructure",
         "Stellar & Soroban",
@@ -361,7 +359,7 @@ export const openSource = {
       myRole: "Maintainer",
       roleBadge: "Maintainer",
       description:
-        "Velo is an open-source payment and liquidity platform built on Stellar that combines Soroban smart contracts, a lightweight API layer, and a mobile-first experience to enable secure payments, programmable escrow, agent-assisted transactions, and real-world digital commerce.",
+        "Open-source payment and liquidity platform on Stellar. Combines Soroban smart contracts, a lightweight API, and a mobile-first UI for programmable escrow and real-world digital commerce.",
       highlights: [
         "Payments & Liquidity",
         "Mobile-first",
@@ -382,7 +380,7 @@ export const openSource = {
       name: "Drips",
       context: "Decentralised streaming payments protocol",
       description:
-        "Contributing frontend improvements, UX redesigns, and accessibility work to the Drips Wave (Stellar) initiative.",
+        "Shipping frontend improvements and UX redesigns for the Drips Wave (Stellar) initiative.",
       myRole: "Open Source Contributor",
       period: "May 2026 – Present",
       tech: ["TypeScript", "React", "Ethers.js", "Stellar"],
@@ -395,7 +393,7 @@ export const openSource = {
       name: "GrantFox",
       context: "Open-source grant discovery platform",
       description:
-        "Maintainer and frontend engineer — reviewing PRs, shipping features, establishing design standards, and growing the contributor community.",
+        "Maintainer and frontend engineer — shipping features, reviewing PRs, and growing the contributor community.",
       myRole: "Open Source Contributor & Maintainer",
       period: "July 2026 – Present",
       tech: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
@@ -473,12 +471,12 @@ export const experience = [
     company: "GrantFox",
     period: "July 2026 — Present",
     description:
-      "Shipped product features, established design standards, and grew the contributor community for an open-source grant discovery platform serving African developers.",
+      "Shipped features, established design systems, and led contributor growth for an open-source grant discovery platform serving African developers.",
     highlights: [
-      "Built and shipped the grant application tracker feature end-to-end",
-      "Established the design system, improving UI consistency across the platform",
-      "Reviewed and merged 50+ pull requests with structured feedback",
-      "Onboarded new contributors, reducing ramp-up time significantly",
+      "Shipped the grant application tracker end-to-end",
+      "Built the design system, eliminating UI inconsistency",
+      "Reviewed and merged 50+ pull requests",
+      "Onboarded contributors, accelerating ramp-up",
     ],
     link: "https://maintainer.grantfox.xyz/profile/k-deejah",
     linkLabel: "View Profile",
@@ -488,11 +486,11 @@ export const experience = [
     company: "Drips Wave (Stellar)",
     period: "May 2026 — Present",
     description:
-      "Redesigned core user flows and shipped accessibility improvements for a decentralised streaming payments protocol on Stellar.",
+      "Redesigned core payment flows and shipped accessibility improvements for a decentralised streaming payments protocol on Stellar.",
     highlights: [
-      "Redesigned core streaming payment flow, reducing user drop-off",
-      "Shipped accessibility improvements to WCAG 2.1 AA standard",
-      "Improved contributor onboarding experience",
+      "Redesigned the streaming payment flow, cutting user drop-off",
+      "Achieved WCAG 2.1 AA compliance across key flows",
+      "Refactored contributor onboarding, reducing time-to-first-PR",
       "Merged 30+ pull requests across frontend and documentation",
     ],
     link: "https://www.drips.network/wave/stellar",
@@ -503,11 +501,11 @@ export const experience = [
     company: "Freelance",
     period: "2023 — Present",
     description:
-      "Designed and engineered AI-powered products end-to-end for clients globally — from user research and Figma prototypes to production React and TypeScript code.",
+      "Designed and engineered AI-powered products end-to-end — from discovery research to production React and TypeScript code.",
     highlights: [
-      "Shipped 6+ production projects across AI, Web3, and product design",
-      "Owned full product lifecycle — research, design, engineering, deployment",
-      "Collaborated remotely with teams across multiple time zones",
+      "Shipped 6+ production products across AI, Web3, and product design",
+      "Owned full product lifecycle: research, design, engineering, deployment",
+      "Delivered remotely with clients across multiple time zones",
     ],
     link: null,
     linkLabel: null,

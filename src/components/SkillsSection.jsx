@@ -29,7 +29,7 @@ export default function SkillsSection() {
           <motion.h2
             id="skills-heading"
             variants={fadeInUp}
-            className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.02em] text-textPrimary mb-14"
+            className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.02em] text-textPrimary mb-10"
           >
             Tools and <span className="text-gradient">technologies</span>
           </motion.h2>

@@ -221,14 +221,14 @@ export default function OpenSourceSection() {
           >
             Building in <span className="text-gradient">public</span>
           </motion.h2>
-          <motion.p variants={fadeInUp} className="text-base text-textMuted max-w-2xl mb-14 leading-relaxed">
+          <motion.p variants={fadeInUp} className="text-base text-textMuted max-w-xl mb-14 leading-relaxed">
             {openSource.tagline}
           </motion.p>
 
           {/* ── Projects I own and maintain ── */}
           <motion.div variants={fadeInUp} className="mb-14">
             <p className="text-[11px] font-mono font-semibold text-accent uppercase tracking-[0.15em] mb-6">
-              Projects I Created & Maintain
+              My Projects
             </p>
             <div className="grid md:grid-cols-3 gap-5">
               {openSource.maintainedProjects.map((project, i) => (

@@ -28,8 +28,7 @@ export default function AboutSection() {
                 id="about-heading"
                 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.02em] text-textPrimary mb-8"
               >
-                Design, <span className="text-gradient">AI,</span> and
-                engineering — end to end
+                I design, build, and ship <span className="text-gradient">AI products.</span>
               </h2>
 
               <div className="space-y-4 text-textMuted text-base leading-relaxed">

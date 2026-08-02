@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
-import { navLinks } from "../data/portfolio.js";
+import { navLinks, resumeUrl } from "../data/portfolio.js";
 
 // Track which section is currently in view
 function useActiveSection() {
@@ -27,8 +27,6 @@ function useActiveSection() {
 
   return active;
 }
-
-import { resumeUrl } from "../data/portfolio.js";
 
 // ─── Theme Toggle ─────────────────────────────────────────────────
 function ThemeToggle({ theme, onToggle }) {
